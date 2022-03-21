@@ -1,9 +1,9 @@
 <nav class="navbar">
       <div id="section-nav">
         <li><%= link_to 'Accueil', root_path %></li>
-        <li><%= link_to 'Articles', root_path %></li>
-        <li><%= link_to 'Contact', root_path %></li>
-        <li><%= link_to 'Divers', root_path %></li>
+        <li><%= link_to 'Movies', movies_path %></li>
+        <li><%= link_to 'Team', root_path %></li>
+        <li><%= link_to 'Contacts', root_path %></li>
         
         <% if current_user %>
           <li><%= link_to 'Déconnexion', destroy_user_session_path, method: "delete" %></li>
