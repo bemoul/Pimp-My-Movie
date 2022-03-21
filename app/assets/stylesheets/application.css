@@ -13,3 +13,153 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+
+  margin: 0px;
+  
+  box-sizing: border-box;
+  
+  }
+  
+    
+  
+  h1 {
+  
+    font-family: "Fira-Code", cursive;
+    
+    text-align: center;
+
+    font-size: 30px;
+    
+    font-weight: 100;
+    
+    line-height: 1.20;
+    
+    opacity: 0.85;
+    
+    margin-top: 30px;
+    
+    margin-bottom: 5px;
+    
+    letter-spacing: -0.68px;
+    
+    word-spacing: 0.00px;
+    
+    text-transform: none;
+    
+    }
+  
+    
+  
+  h2 {
+  
+  font-family: "le-havre-rounded-thin", sans serif;
+  
+  font-size: 28px;
+  
+  font-weight: 300;
+  
+  line-height: 1.20;
+  
+  opacity: 0.85;
+  
+  margin-top: 30px;
+  
+  margin-bottom: 5px;
+  
+  letter-spacing: -0.68px;
+  
+  word-spacing: 0.00px;
+  
+  text-transform: none;
+  
+  }
+  
+    
+  
+  h3 {
+  
+  font-family: "letter-gothic-std-medium", sans serif;
+  
+  font-size: 16px;
+  
+  font-weight: 400;
+  
+  line-height: 1.20;
+  
+  opacity: 1.00;
+  
+  margin-top: 30px;
+  
+  margin-bottom: 5px;
+  
+  letter-spacing: 0.00px;
+  
+  word-spacing: 0.00px;
+  
+  text-transform: none;
+  
+  }
+  
+    
+  
+  p {
+  
+  font-family: "prenton-rp-cond-light", sans serif;
+  
+  font-size: 18px;
+  
+  font-weight: 400;
+  
+  line-height: 1.60;
+  
+  opacity: 0.70;
+  
+  margin-top: 0px;
+  
+  margin-bottom: 25px;
+  
+  letter-spacing: -0.30px;
+  
+  word-spacing: -0.10px;
+  
+  text-transform: none;
+  
+  }
+  
+  #section-nav{
+  font-family: 'Fira Code';
+  align-items: right;
+  display: flex;
+  padding: 15px;
+  }
+
+  
+  #section-nav li{
+  font-family: 'Fira Code';
+  text-align: right;
+  font-family: Roboto;
+  margin-top: 10px;
+  padding: 15px;
+  display: flex;
+  text-decoration: none;
+  }
+
+  li .profile {
+    color: red;
+  }
+  
+  li a {
+  font-family: 'Fira Code';
+  text-decoration: none;
+  color: black;
+  }
+  
+  li a:hover {
+  opacity: 0.8;
+  }
+
+  #login li {
+  text-decoration: none;
+  }
