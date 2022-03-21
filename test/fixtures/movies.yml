@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  synopsis: MyText
+  director: MyString
+  original_soundtrack: MyString
+  release_date: 1
+
+two:
+  title: MyString
+  synopsis: MyText
+  director: MyString
+  original_soundtrack: MyString
+  release_date: 1
