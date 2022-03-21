@@ -4,12 +4,18 @@
     <title>PimpMyMovie</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Hubballi&family=Montserrat:wght@100&family=Poppins:wght@400;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+  <%= render 'layouts/shared/navbar' %>
     <%= yield %>
+    
   </body>
 </html>
