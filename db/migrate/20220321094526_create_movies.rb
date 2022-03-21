@@ -4,7 +4,6 @@ class CreateMovies < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :synopsis
       t.string :director
-      t.string :original_soundtrack
       t.integer :release_date
 
       t.timestamps
