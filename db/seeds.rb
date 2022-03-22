@@ -11,10 +11,10 @@ require 'faker'
 Actor.destroy_all
 Category.destroy_all
 Comment.destroy_all
-Movie.destroy_all
 Music.destroy_all
 Rating.destroy_all
 User.destroy_all
+Movie.destroy_all
 
 
 
