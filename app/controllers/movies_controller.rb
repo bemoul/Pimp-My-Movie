@@ -65,6 +65,6 @@ class MoviesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def movie_params
-      params.require(:movie).permit(:title, :synopsis, :director, :release_date, :rating)
+      params.require(:movie).permit(:title, :synopsis, :director, :release_date)
     end
 end
