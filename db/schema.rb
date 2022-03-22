@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_22_132326) do
+ActiveRecord::Schema.define(version: 2022_03_22_132558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 2022_03_22_132326) do
     t.date "create_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "join_table_actors_movies", force: :cascade do |t|
+    t.bigint "actor_id"
+    t.bigint "music_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actor_id"], name: "index_join_table_actors_movies_on_actor_id"
+    t.index ["music_id"], name: "index_join_table_actors_movies_on_music_id"
   end
 
   create_table "join_table_movies_musics", force: :cascade do |t|
@@ -79,6 +88,8 @@ ActiveRecord::Schema.define(version: 2022_03_22_132326) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "join_table_actors_movies", "actors"
+  add_foreign_key "join_table_actors_movies", "musics"
   add_foreign_key "join_table_movies_musics", "movies"
   add_foreign_key "join_table_movies_musics", "musics"
 end
