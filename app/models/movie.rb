@@ -1,9 +1,9 @@
 class Movie < ApplicationRecord
   belongs_to :user
-  has_many :comments
-  has_many :categories
+  has_many :comments, through: JoinTableCommentsMovies
+  has_many :categories, through: JoinTableCategoriesMovies
   has_many :ratings
   has_many :actors
-  has_many :musics
-  has_many :ratings, through: :users
+  has_many :musics, though: JoinTableMoviesMusics
+ # has_many :ratings, through: :users
 end

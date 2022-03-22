@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_22_132805) do
+ActiveRecord::Schema.define(version: 2022_03_22_133657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,15 @@ ActiveRecord::Schema.define(version: 2022_03_22_132805) do
     t.datetime "updated_at", null: false
     t.index ["actor_id"], name: "index_join_table_actors_movies_on_actor_id"
     t.index ["music_id"], name: "index_join_table_actors_movies_on_music_id"
+  end
+
+  create_table "join_table_movies_comments", force: :cascade do |t|
+    t.bigint "movie_id"
+    t.bigint "comment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_join_table_movies_comments_on_comment_id"
+    t.index ["movie_id"], name: "index_join_table_movies_comments_on_movie_id"
   end
 
   create_table "join_table_movies_musics", force: :cascade do |t|
@@ -101,6 +110,8 @@ ActiveRecord::Schema.define(version: 2022_03_22_132805) do
   add_foreign_key "JoinTableCategoriesMovies", "movies"
   add_foreign_key "join_table_actors_movies", "actors"
   add_foreign_key "join_table_actors_movies", "musics"
+  add_foreign_key "join_table_movies_comments", "comments"
+  add_foreign_key "join_table_movies_comments", "movies"
   add_foreign_key "join_table_movies_musics", "movies"
   add_foreign_key "join_table_movies_musics", "musics"
 end
