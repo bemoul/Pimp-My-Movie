@@ -4,6 +4,6 @@ class Movie < ApplicationRecord
   has_many :categories, through: JoinTableCategoriesMovies
   has_many :ratings
   has_many :actors
-  has_many :musics, though: JoinTableMoviesMusics
+  has_many :musics, through: JoinTableMoviesMusics
  # has_many :ratings, through: :users
 end
