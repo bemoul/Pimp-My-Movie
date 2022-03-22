@@ -5,5 +5,4 @@ class Movie < ApplicationRecord
   has_many :ratings
   has_many :actors
   has_many :musics
-  has_many :ratings, through: :users
 end
