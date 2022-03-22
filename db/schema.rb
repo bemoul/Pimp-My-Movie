@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2022_03_21_125857) do
+=======
+ActiveRecord::Schema.define(version: 2022_03_21_212736) do
+>>>>>>> b8c843eb65fc84b37f592f8771d7ce4d198bc6aa
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,12 +23,14 @@ ActiveRecord::Schema.define(version: 2022_03_21_125857) do
     t.string "full_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "movie_id"
   end
 
   create_table "categories", force: :cascade do |t|
     t.string "style"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "movie_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -33,13 +39,13 @@ ActiveRecord::Schema.define(version: 2022_03_21_125857) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.integer "movie_id"
   end
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.text "synopsis"
     t.string "director"
-    t.string "original_soundtrack"
     t.integer "release_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -52,6 +58,7 @@ ActiveRecord::Schema.define(version: 2022_03_21_125857) do
     t.string "style"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "movie_id"
   end
 
   create_table "ratings", force: :cascade do |t|
