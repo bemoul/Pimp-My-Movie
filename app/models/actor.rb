@@ -1,4 +1,4 @@
 class Actor < ApplicationRecord
-  has_many :actors, through: :JoinTableMovieActors
-  has_many :JoinTableMovieActors, through: :actors
+  has_many :join_table_movie_actors
+  has_many :movies, through: :join_table_movie_actors
 end
