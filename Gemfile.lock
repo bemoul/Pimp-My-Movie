@@ -241,7 +241,11 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.6)
+<<<<<<< HEAD
   rails-erd (~> 1.5, >= 1.5.2)
+=======
+  rails-erd
+>>>>>>> dce29fbb65e11cdc1057c00a95f37a026188ce6b
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
