@@ -14,41 +14,39 @@
 
 
               <li class="nav-item">
-                <a class="nav-link active" <%= link_to 'Home' %></a>
+                <a class="nav-link active" <%= link_to 'Home', root_path %></a>
                   <span class="visually-hidden">(current)</span>
                 </a>
               </li>
 
 
               <li class="nav-item">
-                <a class="nav-link" <%= link_to 'Movies' %></a>
+                <a class="nav-link" <%= link_to 'Movies', movies_path %></a>
               </li>
 
 
 
               
 
-              <% if user_signed_in? %>
-
+              <% if current_user %>
+              
               <li class="nav-item">
-                <a class="nav-link" <%= link_to "Profile", user_path(current_user.id)%>
+                <a class="nav-link" <%= link_to "Log out", destroy_user_session_path, method: "delete" %></a>
               </li>
 
-
               <li class="nav-item">
-                <a class="nav-link" <%= link_to "Log out"%></a>
+                <a class="nav-link" <%= link_to "Profile", profiles_path %>
               </li>
-
 
               <% else %>
-
               <li class="nav-item">
-                <a class="nav-link" <%= link_to 'Subscribe'%></a>
+                <a class="nav-link" <%= link_to 'Log in', new_user_session_path %></a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" <%= link_to 'Subscribe', new_user_registration_path%></a>
               </li>
 
-              <li class="nav-item">
-                <a class="nav-link" <%= link_to 'Log in'%></a>
-              </li>
 
               <% end %>
 
