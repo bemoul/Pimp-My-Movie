@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: [:show, :edit, :create, :new ]
 
   # GET /movies or /movies.json
   def index
@@ -8,15 +9,22 @@ class MoviesController < ApplicationController
 
   # GET /movies/1 or /movies/1.json
   def show
+    @movie = Movie.find(params[:id])
+    @comments = Comment.all
   end
 
   # GET /movies/new
   def new
-    @movie = current_user.movies.build
+    if current_user
+      @movie = current_user.movies.build
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   # GET /movies/1/edit
   def edit
+    @movie = Movie.find(params[:id])
   end
 
   # POST /movies or /movies.json
@@ -66,5 +74,16 @@ class MoviesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def movie_params
       params.require(:movie).permit(:title, :synopsis, :director, :release_date)
+    end
+
+    def comment_params
+      params.require(:comment).permit(:description)
+    end
+
+    def authenticate_user
+      unless current_user
+        flash[:danger] = "Please log in."
+        redirect_to new_session_path
+      end
     end
 end

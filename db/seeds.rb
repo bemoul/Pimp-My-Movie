@@ -18,7 +18,7 @@ User.destroy_all
 
 
 
-10.times do |i|
+3.times do |i|
   Music.create(
     title: Faker::Music.instrument,
     band: Faker::Music.band,
@@ -26,7 +26,7 @@ User.destroy_all
   )
 end
 
-10.times do |i|
+3.times do |i|
 
     user = User.create(
         email: 'user-mail' + "#{i}" + '@yopmail.com',
@@ -59,18 +59,18 @@ end
 
 end
 
-10.times do |i|
+3.times do |i|
   Category.create(
     style: Faker::Book.genre
   )
 end
 
-10.times do |i|
+3.times do |i|
   Actor.create(
     full_name: Faker::TvShows::Friends.character
   )
 end
-10.times do |i|
+3.times do |i|
     Rating.create(
       user_id: User.all.sample.id,
       movie_id: Movie.all.sample.id
