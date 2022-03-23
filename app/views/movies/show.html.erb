@@ -24,3 +24,14 @@
   <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <% else %>
 <% end %>
+
+<% @comments.each do |comment| %>
+  <% if comment.movie_id == @movie.id %>
+  <p>Commentaires du film :</p>
+    <%= comment.description %>
+
+  <p>L'utilisateur du commentaire :</p>
+    <%= comment.user.id %>
+
+  <% end %>
+<% end %>
