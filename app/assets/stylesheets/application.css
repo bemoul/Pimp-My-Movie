@@ -75,6 +75,7 @@
   margin: 0px;
 
   box-sizing: border-box;
+  color: white;
   background-color: black;
 
   }
@@ -92,7 +93,7 @@
 
 
   h1 {
-
+    color: white;
     font-family: "Fira-Code", cursive;
 
     text-align: center;
@@ -117,10 +118,13 @@
 
     }
 
-
+p {
+  color: white;
+}
 
   h2 {
-
+  
+  color: white;
   font-family: 'Fira Code';
 
   font-size: 28px;
@@ -146,7 +150,7 @@
 
 
   h3 {
-
+  color: white;
   font-family: 'Fira Code';
 
   font-size: 16px;

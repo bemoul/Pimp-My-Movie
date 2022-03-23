@@ -25,13 +25,13 @@
 <% else %>
 <% end %>
 
-<% @comments.each do |comment| %>
-  <% if comment.movie_id == @movie.id %>
-  <p>Commentaires du film :</p>
+<h2>Commentaires du film :</h2>
+  <% @comments.each do |comment| %>
     <%= comment.description %>
 
-  <p>L'utilisateur du commentaire :</p>
-    <%= comment.user.id %>
-
+  <% if comment.movie_id == @movie.id %>
   <% end %>
+
+  <h3>Les utilisateurs qui ont commentés le film :</h3>
+    <%= comment.user.id %>
 <% end %>

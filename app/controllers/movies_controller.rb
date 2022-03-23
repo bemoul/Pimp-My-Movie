@@ -76,6 +76,10 @@ class MoviesController < ApplicationController
       params.require(:movie).permit(:title, :synopsis, :director, :release_date)
     end
 
+    def comment_params
+      params.require(:comment).permit(:description)
+    end
+
     def authenticate_user
       unless current_user
         flash[:danger] = "Please log in."
