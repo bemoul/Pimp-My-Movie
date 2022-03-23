@@ -20,8 +20,6 @@
         <td><%= movie.release_date %></td>
         <% if current_user %>
         <td><%= link_to 'Show', movie %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% else %>
         <% end %>
       </tr>
