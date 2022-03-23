@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Synopsis</th>
       <th>Director</th>
       <th>Release date</th>
       <th colspan="3"></th>
@@ -17,12 +16,12 @@
     <% @movies.each do |movie| %>
       <tr>
         <td><%= movie.title %></td>
-        <td><%= movie.synopsis %></td>
         <td><%= movie.director %></td>
         <td><%= movie.release_date %></td>
+        <% if current_user %>
         <td><%= link_to 'Show', movie %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

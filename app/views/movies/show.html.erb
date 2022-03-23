@@ -19,6 +19,8 @@
   <strong>Release date:</strong>
   <%= @movie.release_date %>
 </p>
-
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
+<% if current_user.id == @movie.user.id %>
+  <%= link_to 'Edit', edit_movie_path(@movie) %> |
+<% else %>
+<% end %>
