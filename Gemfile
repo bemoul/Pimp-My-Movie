@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.4'
 
 gem 'table_print'
-gem 'faker'
+
 gem 'devise'
 gem 'dotenv-rails'
 

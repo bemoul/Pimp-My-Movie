@@ -1,55 +1,55 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe TonModel, type: :model do
+# RSpec.describe TonModel, type: :model do
 
-  before(:each) do 
-  # en général, tu as envie de créer une nouvelle instance
-  end
+#   before(:each) do 
+#   # en général, tu as envie de créer une nouvelle instance
+#   end
 
 
 
-  context "validations" do
+#   context "validations" do
 
-    it "is valid with valid attributes" do
-      # création qui est valide
-    end
+#     it "is valid with valid attributes" do
+#       # création qui est valide
+#     end
 
-    describe "#some_attribute" do
-      # teste cet attribut, en fonction de la validation que tu lui as donnée
-    end
+#     describe "#some_attribute" do
+#       # teste cet attribut, en fonction de la validation que tu lui as donnée
+#     end
 
-  end
+#   end
 
-  context "associations" do
+#   context "associations" do
 
-    describe "some association" do
-      # teste cette association
-    end
+#     describe "some association" do
+#       # teste cette association
+#     end
 
-  end
+#   end
 
-  context "callbacks" do
+#   context "callbacks" do
 
-    describe "some callbacks" do
-      # teste ce callback
-    end
+#     describe "some callbacks" do
+#       # teste ce callback
+#     end
 
-  end
+#   end
 
-  context "public instance methods" do
+#   context "public instance methods" do
 
-    describe "#some_method" do
-      # teste cette méthode
-    end
+#     describe "#some_method" do
+#       # teste cette méthode
+#     end
 
-  end
+#   end
 
-  context "public class methods" do
+#   context "public class methods" do
 
-    describe "self.some_method" do
-      # teste cette méthode
-    end
+#     describe "self.some_method" do
+#       # teste cette méthode
+#     end
 
-  end
+#   end
 
-end
+# end
