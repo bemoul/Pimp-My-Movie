@@ -1,16 +1,59 @@
-<nav class="navbar">
-      <div id="section-nav">
-        <li><%= link_to 'Accueil', root_path %></li>
-        <li><%= link_to 'Movies', movies_path %></li>
-        <li><%= link_to 'Team', root_path %></li>
-        <li><%= link_to 'Contacts', root_path %></li>
-        
-        <% if current_user %>
-          <li><%= link_to 'Déconnexion', destroy_user_session_path, method: "delete" %></li>
-          <li class="profile"><%= link_to 'Profile', profiles_path %></li>
-        <% else %>
-          <li><%= link_to 'Connexion', new_user_session_path %></li>
-          <li><%= link_to 'Inscription', new_user_registration_path %></li>
-        <% end %>
-      </div>
-    </nav>
+
+
+<div class="div-links">
+    <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Pimp my Movie</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+
+
+              <li class="nav-item">
+                <a class="nav-link active" <%= link_to 'Home' %></a>
+                  <span class="visually-hidden">(current)</span>
+                </a>
+              </li>
+
+
+              <li class="nav-item">
+                <a class="nav-link" <%= link_to 'Movies' %></a>
+              </li>
+
+
+
+              
+
+              <% if user_signed_in? %>
+
+              <li class="nav-item">
+                <a class="nav-link" <%= link_to "Profile", user_path(current_user.id)%>
+              </li>
+
+
+              <li class="nav-item">
+                <a class="nav-link" <%= link_to "Log out"%></a>
+              </li>
+
+
+              <% else %>
+
+              <li class="nav-item">
+                <a class="nav-link" <%= link_to 'Subscribe'%></a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" <%= link_to 'Log in'%></a>
+              </li>
+
+              <% end %>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
