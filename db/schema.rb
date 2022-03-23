@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(version: 2022_03_21_212736) do
     t.integer "rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "movie_id"
   end
 
   create_table "users", force: :cascade do |t|
