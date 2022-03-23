@@ -32,6 +32,11 @@
   <% if comment.movie_id == @movie.id %>
   <% end %>
 
-  <h3>Les utilisateurs qui ont commentés le film :</h3>
-    <%= comment.user.id %>
-<% end %>
+  <h3>L'utilisateur n°<%= comment.user.id %> :</h3>
+  <% end %>
+
+    <h2>Donnez votre avis sur le film :</h2>
+      <%= form_tag (movie_comments_path(@movie.id)) do%>
+        <%= text_area_tag 'description', nil, class: "form-control area"%>
+        <%= submit_tag "Envoyer", class: 'button my-3' %>
+  <% end %>
