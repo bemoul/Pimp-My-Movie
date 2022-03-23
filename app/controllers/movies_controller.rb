@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: %i[ show ]
 
   # GET /movies or /movies.json
   def index
@@ -13,7 +13,11 @@ class MoviesController < ApplicationController
 
   # GET /movies/new
   def new
-    @movie = current_user.movies.build
+    if current_user
+      @movie = current_user.movies.build
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   # GET /movies/1/edit
