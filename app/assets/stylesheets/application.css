@@ -19,7 +19,6 @@
 }
 
 .jumbotron{
- background-image: url("https://www.linkpicture.com/q/jumbotron_pmm.jpg");
   background-repeat: no-repeat;
   width: 90%;
   background-size: cover;
@@ -215,7 +214,7 @@ p {
   text-transform: none;
 
   }
-  
+
   h4 {
   color: white!important;
   font-family: 'Fira Code';
