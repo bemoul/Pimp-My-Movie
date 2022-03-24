@@ -235,12 +235,12 @@
  }
 
  a {
-   color: #1a1a1a;
+   color: white;
    text-decoration: underline;
  }
 
  a:hover {
-   color: #151515;
+   color: yellow;
  }
 
  a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -4795,7 +4795,7 @@
    flex-direction: column;
    min-width: 0;
    word-wrap: break-word;
-   color: black;
+   color: white ;
    background-clip: border-box;
 
  }
