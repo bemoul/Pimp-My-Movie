@@ -2,6 +2,10 @@ class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, only: [:show, :edit, :create, :new ]
 
+  def home
+    @movies = Movie.all
+  end
+  
   # GET /movies or /movies.json
   def index
     @movies = Movie.all

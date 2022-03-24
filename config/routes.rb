@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'movies#home'
   resource 'profiles', only: [:show, :edit], :path => "my-account"
   
   resources 'movies' do
