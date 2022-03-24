@@ -9,8 +9,7 @@ class MoviesController < ApplicationController
 
   # GET /movies/1 or /movies/1.json
   def show
-    @movie = Movie.find(params[:id])
-    @comments = Comment.all
+    @comments = Comment.all.where(movie:@movie)
   end
 
   # GET /movies/new
