@@ -1,36 +1,27 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'New Movie', new_movie_path %>
-
-<div class="index__text">
+<h1 class="pb-5"> Movies</h1>
+<div class="container px-5">
+  <div class="index__text1 px-5">
 
 
-
-<div class ="container-fluid ">
-        <div class="prices">
-            <div class="text-center text-white px-5"><div class="display-4">BEST MOVIES</br></div>
-        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-      <div class="col ">
-        <div class="ccard mb-4 rounded-3 shadow-sm border-primary">
-          <div class="card-header py-3">
-
-          </div>
-          <% @movies.each do |movie| %>
-          <img class="card-img-top" src="https://img.betaseries.com/nqvlwCBtCFlWKvdl80H28hfHMfw=/600x900/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffilms%2Faffiches%2Foriginal%2F158.jpg" style="width:70%">
-          <div class="card-body">
-            <ul class="list-unstyled mt-3 mb-4">
-              <li><%= movie.director %></li>
-            </ul>
-            <button type="button" class="w-50 btn  btn-primary"><%= link_to 'Read More', movie %></button>
-
-          </div>
-          <% end %>
+<p> Want to add a movie ? <%= link_to "Click here", new_movie_path %> </p>
+</div>
 </div>
 
-        </div>
-      </div>
-      <div class="col">
-        <div class="ccard mb-4 rounded-3 shadow-sm border-primary">
-          <div class="card-header py-3">
 
-          </div>
+
+    <div class="container d-flex flex-wrap px-5 py-1 ">
+          <% @movies.each do |movie| %>
+            <div class="card align-item-center px-5" style="width: 18rem;">
+              <%= link_to movie do %>
+              <img class="card-img-top" src="https://img.betaseries.com/nqvlwCBtCFlWKvdl80H28hfHMfw=/600x900/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffilms%2Faffiches%2Foriginal%2F158.jpg" alt="Card image cap">
+              <% end %>
+                <div class="card-body">
+                  <p class="card-title lead"><%= movie.title %></p>
+                  <small><%= movie.director %><br></small>
+                  <small><%= movie.release_date %></small>
+                </div>
+              <div class="card-footer ">
+              </div>
+            </div>
+          <% end %>
+  </div>
