@@ -1,3 +1,34 @@
+
+<p id="notice"><%= notice %></p>
+
+<div style="width:100px; height:auto">
+  <%= link_to image_tag(@movie.movie_picture, style:'width:300px') %>
+</div>
+<p>
+  <strong>Title:</strong>
+  <%= @movie.title %>
+</p>
+
+<p>
+  <strong>Synopsis:</strong>
+  <%= @movie.synopsis %>
+</p>
+
+<p>
+  <strong>Director:</strong>
+  <%= @movie.director %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @movie.release_date %>
+</p>
+<%= link_to 'Back', movies_path %>
+<% if current_user.id == @movie.user.id %>
+  <%= link_to 'Edit', edit_movie_path(@movie) %> |
+<% else %>
+<% end %>
+
 <div class="container1 px-5 py-5">
 
         
@@ -57,4 +88,3 @@
 </div>
 
 </div>
-
