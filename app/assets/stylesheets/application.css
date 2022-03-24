@@ -18,9 +18,9 @@
  }
  .jumbotron{
   background-image: url("https://www.linkpicture.com/q/jumbotron_pmm.jpg");
- 
+
    background-repeat: no-repeat;
- 
+
    width: 90%;
    background-size: cover;
    background-position: center;
@@ -32,17 +32,17 @@
    padding: 6rem 6rem;
    color: white;
  }
- 
- 
- 
+
+
+
  .index__text {
    display: flex;
    justify-content: center;
    flex-direction: column;
    text-align: right;
- 
+
  }
- 
+
  .whiter{
    font-family: 'Fira Code';
    text-align: center;
@@ -50,193 +50,193 @@
    color: white;
    text-align: end;
  }
- 
+
  .index__text p {
    color: white;
    text-align: right;
    font-weight:bolder;
    background-color: grey;
  }
- 
- 
- 
+
+
+
  .index__img img {
    margin-top: 6%;
    width: 600px;
    border-radius: 20px;
  }
- 
+
  .index__button {
    display: flex;
    justify-content: flex-end;
  }
- 
- 
+
+
  .index__button button {
    width: 100%;
  }
- 
- 
+
+
   body {
- 
+
    margin: 0px;
- 
+
    box-sizing: border-box;
    color: white;
    background-color: black;
- 
+
    }
    .div-links {
      position: relative;
    }
- 
+
    .navbar-brand {
      font-family: 'Fira Code'!important;
      margin-right: 25%;
      padding-left: 30px;
    }
- 
- 
- 
- 
+
+
+
+
    h1 {
      color: white;
-     font-family: "Fira-Code", cursive;
- 
+     font-family: 'Fira Code'!important;
+
      text-align: center;
- 
+
      font-size: 30px;
- 
+
      font-weight: 100;
- 
+
      line-height: 1.20;
- 
+
      opacity: 0.85;
- 
+
      margin-top: 30px;
- 
+
      margin-bottom: 5px;
- 
+
      letter-spacing: -0.68px;
- 
+
      word-spacing: 0.00px;
- 
+
      text-transform: none;
- 
+
      }
- 
+
  p {
    color: white;
  }
- 
+
    h2 {
- 
+
    color: white;
    font-family: 'Fira Code';
- 
+
    font-size: 28px;
- 
+
    font-weight: 300;
- 
+
    line-height: 1.20;
- 
+
    opacity: 0.85;
- 
+
    margin-top: 30px;
- 
+
    margin-bottom: 5px;
- 
+
    letter-spacing: -0.68px;
- 
+
    word-spacing: 0.00px;
- 
+
    text-transform: none;
- 
+
    }
- 
- 
- 
+
+
+
    h3 {
    color: white;
    font-family: 'Fira Code';
- 
+
    font-size: 16px;
- 
+
    font-weight: 400;
- 
+
    line-height: 1.20;
- 
+
    opacity: 1.00;
- 
+
    margin-top: 30px;
- 
+
    margin-bottom: 5px;
- 
+
    letter-spacing: 0.00px;
- 
+
    word-spacing: 0.00px;
- 
+
    text-transform: none;
- 
+
    }
    h4 {
    color: white!important;
    font-family: 'Fira Code';
- 
+
    font-size: 40px;
- 
+
    font-weight: 400;
- 
+
    line-height: 1.20;
- 
+
    opacity: 1.00;
- 
+
    margin-top: 30px;
- 
+
    margin-bottom: 5px;
- 
+
    letter-spacing: 0.00px;
- 
+
    word-spacing: 0.00px;
- 
+
    text-transform: none;
- 
+
    }
- 
- 
- 
+
+
+
    p {
- 
+
    font-family: 'Fira Code';
- 
+
    font-size: 18px;
- 
+
    font-weight: 400;
- 
+
    line-height: 1.60;
- 
+
    opacity: 0.70;
- 
+
    margin-top: 0px;
- 
+
    margin-bottom: 25px;
- 
+
    letter-spacing: -0.30px;
- 
+
    word-spacing: -0.10px;
- 
+
    text-transform: none;
- 
+
    }
- 
+
    #section-nav{
    font-family: 'Fira Code';
    align-items: right;
    display: flex;
    padding: 15px;
    }
- 
- 
+
+
    #section-nav li{
    font-family: 'Fira Code';
    text-align: right;
@@ -246,33 +246,33 @@
    display: flex;
    text-decoration: none;
    }
- 
+
    li .profile {
      color: red;
    }
- 
+
    li a {
    font-family: 'Fira Code';
    text-decoration: none;
    color: black;
    }
- 
+
    li a:hover {
    opacity: 0.8;
    }
- 
+
    #login li {
    text-decoration: none;
    }
    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap");
- 
- 
- 
- 
- 
+
+
+
+
+
    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap");
- 
- 
+
+
    .container {
      padding-bottom: 3rem;
    }
@@ -315,7 +315,7 @@
    .title_wrapper h1 {
      width: 70%;
    }
- 
+
    button {
      font-size: 18px;
      font-family: 'Fira Code' !important;
@@ -323,14 +323,14 @@
      outline: none;
      border: 0 !important;
      border-radius: 4px;
- 
+
    }
- 
+
    .btn {
- 
+
            background-image: linear-gradient(to right bottom, #e1df09, #dfdb13, #ded719, #dcd41f, #dad023);
       }
- 
+
    .btn1 {
      margin: 10px;
      font-family: 'Fira Code' !important;
@@ -347,19 +347,19 @@
      font-weight: 700;
      box-shadow: 0px 0px 14px -7px #f09819;
      }
- 
+
    .btn:hover {
      background-position: right center;
      /* change the direction of the change here */
      color: #fff;
      text-decoration: none;
      }
- 
+
      .btn:active {
      transform: scale(0.95);
      }
- 
- 
+
+
    @media (max-width: 768px) {
      .title_wrapper {
        text-align: center;
