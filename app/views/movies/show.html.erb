@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<div style="width:100px; height:auto">
+  <%= link_to image_tag(@movie.movie_picture, style:'width:300px') %>
+</div>
 <p>
   <strong>Title:</strong>
   <%= @movie.title %>
