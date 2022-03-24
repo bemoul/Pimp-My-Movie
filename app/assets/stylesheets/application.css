@@ -31,8 +31,6 @@
   color: white;
  }
 
-
-
 .index__text {
   display: flex;
   justify-content: center;
@@ -48,7 +46,6 @@
   color: white;
   text-align: end;
 }
-
 
 .index__text p {
   color: white;
@@ -69,11 +66,7 @@
  .index__text1  {
    color: white;
    font-weight:bolder;
-
-
  }
-
-
 
 .index__img img {
   margin-top: 6%;
@@ -95,18 +88,13 @@
 
  body {
 
-   box-sizing: border-box;
-   color: white !important;
-   background-color: black;
-
-
   margin: 0px;
 
   box-sizing: border-box;
   color: white !important;
   background-color: black;
-
   }
+
   .div-links {
     position: relative;
   }
@@ -141,8 +129,7 @@
     word-spacing: 0.00px;
 
     text-transform: none;
-
-    }
+  }
 
 p {
   color: white;
@@ -170,7 +157,6 @@ p {
   word-spacing: 0.00px;
 
   text-transform: none;
-
   }
 
 
@@ -196,8 +182,7 @@ p {
   word-spacing: 0.00px;
 
   text-transform: none;
-
-  }
+}
 
   h4 {
   color: white!important;
@@ -220,8 +205,7 @@ p {
   word-spacing: 0.00px;
 
   text-transform: none;
-
-  }
+}
 
 
 
@@ -246,15 +230,14 @@ p {
   word-spacing: -0.10px;
 
   text-transform: none;
-
-  }
+}
 
   #section-nav{
   font-family: 'Fira Code';
   align-items: right;
   display: flex;
   padding: 15px;
-  }
+}
 
 
 
@@ -295,15 +278,12 @@ p {
   @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap");
 
 
-
-
-
-
   @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap");
 
    .container {
      padding-bottom: 3rem;
    }
+
    img {
      -webkit-box-reflect: below 5px
        linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
@@ -373,7 +353,7 @@ p {
      border: 0px;
      font-weight: 700;
      box-shadow: 0px 0px 14px -7px #f09819;
-     }
+  }
 
 
 
@@ -456,11 +436,11 @@ p {
     /* change the direction of the change here */
     color: #fff;
     text-decoration: none;
-    }
+  }
 
     .btn:active {
     transform: scale(0.95);
-    }
+  }
 
 
   @media (max-width: 768px) {
