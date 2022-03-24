@@ -36,7 +36,7 @@
   <% end %>
 
     <h2>Donnez votre avis sur le film :</h2>
-      <%= form_tag (movie_comments_path(@movie.id)) do%>
-        <%= text_area_tag 'description', nil, class: "form-control area"%>
-        <%= submit_tag "Envoyer", class: 'button my-3' %>
-  <% end %>
+    <%= form_tag (movie_comments_path(@movie.id)) do%>
+      <%= text_area_tag 'description', nil, class: "form-control area"%>
+      <%= submit_tag "Envoyer", class: 'button my-3' %>
+    <% end %>

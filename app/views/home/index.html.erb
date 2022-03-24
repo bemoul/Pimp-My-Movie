@@ -41,48 +41,24 @@
 
 
 <div class ="container-fluid">
+
         <div class="prices">
             <div class="text-center text-white px-5"><div class="display-4">BEST MOVIES</br></div>
         <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
       <div class="col">
         <div class="ccard mb-4 rounded-3 shadow-sm border-primary">
           <div class="card-header py-3">
-
+      <% Movie.find(:all, :order => 'created_at DESC', :limit => 10).each do |movie| %>
           </div>
           <img class="card-img-top" src="https://img.betaseries.com/nqvlwCBtCFlWKvdl80H28hfHMfw=/600x900/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffilms%2Faffiches%2Foriginal%2F158.jpg" style="width:70%">
           <div class="card-body">
             <ul class="list-unstyled mt-3 mb-4">
-              <li>Director : Peter Jackson</li>
+              <li><%= movie.director %></li>
             </ul>
-            <button type="button" class="w-50 btn  btn-primary">Read More</button>
+            <button type="button" class="w-50 btn  btn-primary"><%= link_to 'Show', movie %></button>
+            <% end %>
           </div>
         </div>
       </div>
-      <div class="col">
-        <div class="ccard mb-4 rounded-3 shadow-sm border-primary">
-          <div class="card-header py-3">
-
-          </div>
-          <img class="card-img-top" src="https://img.betaseries.com/nqvlwCBtCFlWKvdl80H28hfHMfw=/600x900/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffilms%2Faffiches%2Foriginal%2F158.jpg" style="width:70%">
-          <div class="card-body">
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>Director : Peter Jackson</li>
-            </ul>
-            <button type="button" class="w-50 btn  btn-primary">Read More</button>
-          </div>
-        </div>
       </div>
-      <div class="col">
-        <div class="ccard mb-4 rounded-3 shadow-sm border-primary">
-          <div class="card-header py-3">
-
-          </div>
-          <img class="card-img-top" src="https://img.betaseries.com/nqvlwCBtCFlWKvdl80H28hfHMfw=/600x900/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffilms%2Faffiches%2Foriginal%2F158.jpg" style="width:70%">
-          <div class="card-body">
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>Director : Peter Jackson</li>
-            </ul>
-            <button type="button" class="w-50 btn  btn-primary">Read More</button>
-          </div>
-        </div>
-      </div>
+     
