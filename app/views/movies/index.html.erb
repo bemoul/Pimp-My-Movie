@@ -1,26 +1,30 @@
 
 
-<%= link_to 'New Movie', new_movie_path %>
 
-  <div class="container d-flex flex-wrap  ">
+<h1 class="pb-5"> Movies</h1>
+<div class="container px-5">
+  <div class="index__text1 px-5">
 
 
-        <% @movies.each do |movie| %>
-        <div class="card align-items-center px-5" style="width: 18rem;">
-          <img class="card-img-top" src="https://img.betaseries.com/nqvlwCBtCFlWKvdl80H28hfHMfw=/600x900/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffilms%2Faffiches%2Foriginal%2F158.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title"><%= movie.director %></h5>
-            
-          </div>
-          <ul class="list-group list-group-flush">
+<p> Want to add a movie ? <%= link_to "Click here", new_movie_path %> </p>
+</div>
+</div>
 
-            <li class="list-group-item"><%= movie.director %></li>
-            <li class="list-group-item"><%= movie.director %></li>
-          </ul>
-          <div class="card-body">
-            <button type="button" class="mt-auto  w-70 d-flex btn  btn-primary"><%= link_to 'Read More', movie %></button>
-            <a href="#" class="card-link">Another link</a>
-          </div>
-        </div>
-    <% end %>
-      </div>
+
+
+    <div class="container d-flex flex-wrap px-5 py-1 ">
+          <% @movies.each do |movie| %>
+            <div class="card align-item-center px-5" style="width: 18rem;">
+              <%= link_to movie do %>
+              <img class="card-img-top" src="https://img.betaseries.com/nqvlwCBtCFlWKvdl80H28hfHMfw=/600x900/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffilms%2Faffiches%2Foriginal%2F158.jpg" alt="Card image cap">
+              <% end %>
+                <div class="card-body">
+                  <p class="card-title lead"><%= movie.title %></p>
+                  <small><%= movie.director %><br></small>
+                  <small><%= movie.release_date %></small>
+                </div>
+              <div class="card-footer ">
+              </div>
+            </div>
+          <% end %>
+  </div>

@@ -16,18 +16,14 @@
  *{
    font-family: 'Fira Code';
  }
- .flexo{
 
- }
  .jumbotron{
   background-image: url("https://www.linkpicture.com/q/jumbotron_pmm.jpg");
-
    background-repeat: no-repeat;
-
    width: 90%;
    background-size: cover;
    background-position: center;
-   text-decoration-color: #fff;
+
    display: flex;
    flex-direction: flex-start;
    gap: 4rem;
@@ -60,6 +56,12 @@
    font-weight:bolder;
    background-color: grey;
  }
+ .index__text1  {
+   color: white;
+   font-weight:bolder;
+
+
+ }
 
 
 
@@ -85,7 +87,7 @@
    margin: 0px;
 
    box-sizing: border-box;
-   color: white;
+   color: white !important;
    background-color: black;
 
    }
@@ -257,7 +259,7 @@
    li a {
    font-family: 'Fira Code';
    text-decoration: none;
-   color: black;
+   color: white;
    }
 
    li a:hover {
@@ -344,8 +346,7 @@
      transition: 0.5s;
      background-size: 200% auto;
      color: black;
-     border-radius: 10px;
-     display: block;
+     border-radius: 30px;
      border: 0px;
      font-weight: 700;
      box-shadow: 0px 0px 14px -7px #f09819;
