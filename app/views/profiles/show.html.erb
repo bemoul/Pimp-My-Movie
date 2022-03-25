@@ -1,2 +1,4 @@
 <h1>Page Profil</h1>
-  <% Movie.find_by(user_id: @movie.id)%>
+  <% @movies.each do |movie| %>
+    <p><%= movie.title %></p>
+  <% end %>
