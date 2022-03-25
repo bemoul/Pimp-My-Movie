@@ -1,32 +1,16 @@
-
 <h1 class="pb-5"> Movies</h1>
 <div class="container px-5">
   <div class="index__text1 px-5">
 
-
 <p> Want to add a movie ? <%= link_to "Click here", new_movie_path %> </p>
 </div>
 </div>
-
-
-
-
-<h1 class="pb-5"> Movies</h1>
-<div class="container px-5">
-  <div class="index__text1 px-5">
-
-
-<p> Want to add a movie ? <%= link_to "Click here", new_movie_path %> </p>
-</div>
-</div>
-
-
 
     <div class="container d-flex flex-wrap px-5 py-1 ">
           <% @movies.each do |movie| %>
             <div class="card align-item-center px-5" style="width: 18rem;">
-              <%= link_to movie do %>
-              <img class="card-img-top" src="https://img.betaseries.com/nqvlwCBtCFlWKvdl80H28hfHMfw=/600x900/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffilms%2Faffiches%2Foriginal%2F158.jpg" alt="Card image cap">
+              <% if movie.movie_picture.attached? %>
+                <%= link_to image_tag(movie.movie_picture, style:'width: 200px') %>
               <% end %>
                 <div class="card-body">
                   <p class="card-title lead"><%= movie.title %></p>
