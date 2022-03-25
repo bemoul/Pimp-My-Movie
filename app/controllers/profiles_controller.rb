@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
   def show
     @user = current_user
     @user_email = current_user.email
+    @movies = Movie.all.where(user:@user)
   end
 
   def edit
