@@ -353,3 +353,70 @@
             justify-content: center;
             background-color: rgba(102, 102, 102, 0.212);
         }
+            margin-bottom: 7rem;
+        }
+    }
+    
+    .movie_picture {
+        padding-top: 30px;
+        align-items: center;
+        display: inline-flex;
+    }
+    
+    .col-4 {
+      margin: 0%;
+        padding-top: 30px;
+        margin-left: 30px;
+    }
+
+    .row {
+        justify-content: center;
+        width: 100%;
+        }
+
+    .edit-movie {
+      text-align: end;
+    }
+
+    .add-movie{
+      text-align: center;
+      font-weight: bold;
+      font-family: Poppins;
+      text-transform: capitalize;
+      margin-bottom: 20px;
+    }
+
+    .big-title{
+      letter-spacing: 1em;
+      color: whitesmoke;
+      font-family: Montserrat;
+      text-align: center;
+    }
+
+    .card-body-profile{
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .card-text-profile{
+      margin: 0;
+    }
+
+    .section-comment{
+      margin-top: 20%;
+    }
+
+    .list-comments {
+      margin: 0;
+      text-align: center;
+    }
+
+    .submit-comment {
+      text-align: right;
+      margin-bottom: 10%;
+    }
+
+    .share{
+      text-align: right;
+      margin-bottom: 2%;
+    }
