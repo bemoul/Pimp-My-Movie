@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2022_03_24_121630) do
     t.string "title"
     t.text "synopsis"
     t.string "director"
-    t.integer "release_date"
+    t.integer "year_of_release"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
