@@ -10,7 +10,7 @@
           <% @movies.each do |movie| %>
             <div class="card align-item-center px-5" style="width: 18rem;">
             <%= link_to movie do %>
-                <%= image_tag(movie.movie_picture, style:'width: 200px') %>
+                <%= image_tag(movie.movie_picture, style:'width: 200px') if movie.movie_picture.attached? %>
               <% end %>
                 <div class="card-body">
                   <p class="card-title lead"><%= movie.title %></p>
@@ -22,3 +22,4 @@
             </div>
           <% end %>
   </div>
+
