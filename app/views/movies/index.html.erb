@@ -11,12 +11,12 @@
       <% @movies.each do |movie| %>
         <div class="card align-item-center px-5" style="width: 18rem;">
         <% if movie.movie_picture.attached? %>
-        <%= link_to image_tag(movie.movie_picture, style:'width:300px') %>
+        <%= link_to image_tag(movie.movie_picture, style:'width: 200px') %>
         <% end %>
         <div class="card-body">
-        <p class="card-title lead"><%= movie.title %></p>
+        <small><%= movie.title %><br></small>
         <small><%= movie.director %><br></small>
-        <small><%= movie.release_date %></small>
+        <small><%= movie.year_of_release %></small>
         </div>
         <div class="card-footer ">
         </div>
