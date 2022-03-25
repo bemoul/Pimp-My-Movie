@@ -1,4 +1,7 @@
-<h1>Page Profil</h1>
+
+  <h2>The list of movies that you created =></h2>
   <% @movies.each do |movie| %>
-    <p><%= movie.title %></p>
+    <p>- <%= movie.title %></p>
   <% end %>
+
+  <p><%= link_to 'Do you want to edit your profil ?', edit_user_registration_path %></p>
