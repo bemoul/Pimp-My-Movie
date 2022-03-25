@@ -53,38 +53,3 @@
         
       </div> --> 
       <!-- end details -->
-                        
-                        
-                  
-
-<div class="container1 px-5 py-5">
-
-
-<div class="card mb-3 px-5" style="max-width: 80%;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="https://images-ext-2.discordapp.net/external/dV7gpnPP4EBUvvo4hvNu2-Y3q3Kns7An8XWiboeqGuY/https/fr.web.img2.acsta.net/medias/nmedia/18/36/06/10/18449315.jpg" class="card-img" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-                        <h4 class="card-title"><%= @movie.title %></h4>
-                        <p class="card-text"><p>Director: <%= @movie.director%></p></p>
-                        <p class="card-text"><p>Release date: <%= @movie.release_date%></p>
-                        <p class="card-text"><p>Synopsis: <%= @movie.synopsis%></p></p>
-                        <p> <%= link_to 'Back', movies_path %> ||
-                        <% if current_user.id == @movie.user.id %>
-                          <%= link_to 'Edit', edit_movie_path(@movie) %>
-                        <% else %>
-                        <% end %> </p>
-                    </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-</div>
-
-</div>
