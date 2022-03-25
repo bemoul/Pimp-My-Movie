@@ -352,3 +352,7 @@
       text-align: center;
       margin-top: 60px;
     }
+
+    .card-text-profile{
+      margin: 0;
+    }
