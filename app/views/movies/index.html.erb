@@ -2,15 +2,15 @@
 <div class="container px-5">
   <div class="index__text1 px-5">
 
-<p> Want to add a movie ? <%= link_to "Click here", new_movie_path %> </p>
+<h3> Want to add a movie ? <%= link_to "Click here", new_movie_path %><i class="fa-solid fa-camera-movie"></i> </h3>
 </div>
 </div>
 
     <div class="container d-flex flex-wrap px-5 py-1 ">
           <% @movies.each do |movie| %>
             <div class="card align-item-center px-5" style="width: 18rem;">
-              <% if movie.movie_picture.attached? %>
-                <%= link_to image_tag(movie.movie_picture, style:'width: 200px') %>
+            <%= link_to movie do %>
+                <%= image_tag(movie.movie_picture, style:'width: 200px') %>
               <% end %>
                 <div class="card-body">
                   <p class="card-title lead"><%= movie.title %></p>
