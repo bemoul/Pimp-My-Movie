@@ -12,8 +12,6 @@
         <div class="card align-item-center px-5" style="width: 18rem;">
         <% if movie.movie_picture.attached? %>
         <%= link_to image_tag(movie.movie_picture, style:'width:300px') %>
-        <% else %>
-        <p>Merci d'ajouter une image :</p>
         <% end %>
         <div class="card-body">
         <p class="card-title lead"><%= movie.title %></p>
