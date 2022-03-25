@@ -1,2 +1,4 @@
 <h1>Page Profil</h1>
-<%= @user.movies.all %>
+  <% @movies.each do |movie| %>
+    <p><%= movie.title %></p>
+  <% end %>

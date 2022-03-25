@@ -1,43 +1,6 @@
-<div class="row">
-  <div class="col-5">
-    <div class="movie_picture">
-      <%= link_to image_tag(@movie.movie_picture, style:'width:300px') %>
-    </div>
-  </div>
 
-  <div class="col-4">
-    <h3>
-      <strong>Title:</strong>
-      <%= @movie.title %>
-    </h3>
 
-    <h3>
-      <strong>Synopsis:</strong>
-      <%= @movie.synopsis %>
-    </h3>
-
-    <h3>
-      <strong>Director:</strong>
-      <%= @movie.director %>
-    </h3>
-
-    <h3>
-      <strong>Year of Release:</strong>
-      <%= @movie.release_date %>
-    </h3>
-
-    <div class="edit-movie">
-      <%= link_to 'Back', movies_path %>
-        <% if current_user.id == @movie.user.id %>
-        <%= link_to 'Edit', edit_movie_path(@movie) %>
-      <% else %>
-      <% end %>
-    </div>
-    </div>
-  </div>
-</div>
-
-<div class="container1 px-5 py-5">
+      <p id="notice"><%= notice %></p>
 
 
      <!-- <div class="rating">
@@ -58,6 +21,44 @@
         <label for="r5"></label>
 
       </div>
+<<<<<<< HEAD
 
       </div> -->
       <!-- end details -->
+=======
+        
+      </div> --> 
+      <!-- end details -->
+                        
+                        
+                  
+
+<div class="container1 px-5 py-5">
+
+
+<div class="card mb-3 px-5" style="max-width: 80%;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+    <%= link_to image_tag(@movie.movie_picture, style:'width:300px') %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+                        <h4 class="card-title"><%= @movie.title %></h4>
+                        <p class="card-text"><p>Director: <%= @movie.director%></p></p>
+                        <p class="card-text"><p>Release date: <%= @movie.release_date%></p>
+                        <p class="card-text"><p>Synopsis: <%= @movie.synopsis%></p></p>
+                        <p> <%= link_to 'Back', movies_path %> ||
+                        <% if current_user.id == @movie.user.id %>
+                          <%= link_to 'Edit', edit_movie_path(@movie) %>
+                        <% else %>
+                        <% end %> </p>
+                    </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+>>>>>>> 04dce52812ca031eba9f5b92fa7f278f1eb7a714
