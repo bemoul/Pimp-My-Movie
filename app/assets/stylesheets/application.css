@@ -356,3 +356,17 @@
     .card-text-profile{
       margin: 0;
     }
+
+    .section-comment{
+      margin-top: 20%;
+    }
+
+    .list-comments {
+      margin: 0;
+      text-align: center;
+    }
+
+    .submit-comment {
+      text-align: right;
+      margin-bottom: 10%;
+    }
