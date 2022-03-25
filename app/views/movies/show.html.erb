@@ -40,7 +40,7 @@
       <div class="card-body">
                         <h4 class="card-title"><%= @movie.title %></h4>
                         <p class="card-text"><p>Director: <%= @movie.director%></p></p>
-                        <p class="card-text"><p>Release date: <%= @movie.release_date%></p>
+                        <p class="card-text"><p>Year Of Release: <%= @movie.release_date%></p>
                         <p class="card-text"><p>Synopsis: <%= @movie.synopsis%></p></p>
                         <p> <%= link_to 'Back', movies_path %> ||
                         <% if current_user.id == @movie.user.id %>
