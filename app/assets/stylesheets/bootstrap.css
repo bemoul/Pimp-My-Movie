@@ -235,12 +235,12 @@
  }
 
  a {
-   color: #1a1a1a;
+   color: white;
    text-decoration: underline;
  }
 
  a:hover {
-   color: #151515;
+   color: yellow;
  }
 
  a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -523,6 +523,7 @@
    font-size: calc(1.525rem + 3.3vw);
    font-weight: 300;
    line-height: 1.2;
+    font-family: 'Fira Code';
  }
 
  @media (min-width: 1200px) {
@@ -535,6 +536,8 @@
    font-size: calc(1.475rem + 2.7vw);
    font-weight: 300;
    line-height: 1.2;
+
+
  }
 
  @media (min-width: 1200px) {
@@ -4792,9 +4795,9 @@
    flex-direction: column;
    min-width: 0;
    word-wrap: break-word;
-   color: black;
+   color: white ;
    background-clip: border-box;
-   border: 1px solid rgba(0, 0, 0, 0.125);
+
  }
 
  .card > hr {
@@ -11121,6 +11124,8 @@
  .btn {
    font-size: 0.875rem;
    text-transform: uppercase;
+   border-radius: 30px;
+   color: black;
  }
 
  .btn-sm, .btn-group-sm > .btn {

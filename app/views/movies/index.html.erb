@@ -1,34 +1,40 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Movies</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Director</th>
-      <th>Release date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @movies.each do |movie| %>
-      <tr>
-        <td><%= movie.title %></td>
-        <td><%= movie.director %></td>
-        <td><%= movie.release_date %></td>
-        <% if current_user %>
-        <td><%= link_to 'Show', movie %></td>
-        <% else %>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<h1 class="pb-5"> Movies</h1>
+<div class="container px-5">
+  <div class="index__text1 px-5">
 
 
-<%= link_to 'New Movie', new_movie_path %>
+<p> Want to add a movie ? <%= link_to "Click here", new_movie_path %> </p>
+</div>
+</div>
 
+
+
+
+<h1 class="pb-5"> Movies</h1>
+<div class="container px-5">
+  <div class="index__text1 px-5">
+
+
+<p> Want to add a movie ? <%= link_to "Click here", new_movie_path %> </p>
+</div>
+</div>
+
+
+
+    <div class="container d-flex flex-wrap px-5 py-1 ">
+          <% @movies.each do |movie| %>
+            <div class="card align-item-center px-5" style="width: 18rem;">
+              <%= link_to movie do %>
+              <img class="card-img-top" src="https://img.betaseries.com/nqvlwCBtCFlWKvdl80H28hfHMfw=/600x900/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffilms%2Faffiches%2Foriginal%2F158.jpg" alt="Card image cap">
+              <% end %>
+                <div class="card-body">
+                  <p class="card-title lead"><%= movie.title %></p>
+                  <small><%= movie.director %><br></small>
+                  <small><%= movie.release_date %></small>
+                </div>
+              <div class="card-footer ">
+              </div>
+            </div>
+          <% end %>
+  </div>

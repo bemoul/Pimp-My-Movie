@@ -1,5 +1,9 @@
+
 <p id="notice"><%= notice %></p>
 
+<div style="width:100px; height:auto">
+  <%= link_to image_tag(@movie.movie_picture, style:'width:300px') %>
+</div>
 <p>
   <strong>Title:</strong>
   <%= @movie.title %>
@@ -25,18 +29,62 @@
 <% else %>
 <% end %>
 
-<h2>Commentaires du film :</h2>
-  <% @comments.each do |comment| %>
-    <%= comment.description %>
+<div class="container1 px-5 py-5">
 
-  <% if comment.movie_id == @movie.id %>
-  <% end %>
+        
+     <!-- <div class="rating">
 
-  <h3>L'utilisateur n°<%= comment.user.id %> :</h3>
-  <% end %>
+        <input type="radio" name="rating" id="r1">
+        <label for="r1"></label>
 
-    <h2>Donnez votre avis sur le film :</h2>
-      <%= form_tag (movie_comments_path(@movie.id)) do%>
-        <%= text_area_tag 'description', nil, class: "form-control area"%>
-        <%= submit_tag "Envoyer", class: 'button my-3' %>
-  <% end %>
+        <input type="radio" name="rating" id="r2">
+        <label for="r2"></label>
+
+        <input type="radio" name="rating" id="r3">
+        <label for="r3"></label>
+
+        <input type="radio" name="rating" id="r4">
+        <label for="r4"></label>
+
+        <input type="radio" name="rating" id="r5">
+        <label for="r5"></label>
+
+      </div>
+        
+      </div> --> 
+      <!-- end details -->
+                        
+                        
+                  
+
+<div class="container1 px-5 py-5">
+
+
+<div class="card mb-3 px-5" style="max-width: 80%;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="https://images-ext-2.discordapp.net/external/dV7gpnPP4EBUvvo4hvNu2-Y3q3Kns7An8XWiboeqGuY/https/fr.web.img2.acsta.net/medias/nmedia/18/36/06/10/18449315.jpg" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+                        <h4 class="card-title"><%= @movie.title %></h4>
+                        <p class="card-text"><p>Director: <%= @movie.director%></p></p>
+                        <p class="card-text"><p>Release date: <%= @movie.release_date%></p>
+                        <p class="card-text"><p>Synopsis: <%= @movie.synopsis%></p></p>
+                        <p> <%= link_to 'Back', movies_path %> ||
+                        <% if current_user.id == @movie.user.id %>
+                          <%= link_to 'Edit', edit_movie_path(@movie) %>
+                        <% else %>
+                        <% end %> </p>
+                    </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+</div>
+
+</div>
