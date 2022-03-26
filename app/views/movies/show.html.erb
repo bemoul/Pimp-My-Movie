@@ -43,10 +43,8 @@
                         <p class="card-text"><p>Year Of Release: <%= @movie.release_date%></p>
                         <p class="card-text"><p>Synopsis: <%= @movie.synopsis%></p></p>
                         <p> <%= link_to 'Back', movies_path %> ||
-                        <% if current_user.id == @movie.user.id %>
                           <%= link_to 'Edit', edit_movie_path(@movie) %>
-                        <% else %>
-                        <% end %> </p>
+                        
                     </div>
                     <div class="section-comments">
                     <h3 class="share">Give your opinion on the movie =></h3>
