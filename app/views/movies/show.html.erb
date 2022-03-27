@@ -1,77 +1,91 @@
+			<p id="notice"><%= notice %></p>
 
+		 <!-- <div class="rating">
 
-      <p id="notice"><%= notice %></p>
+				<input type="radio" name="rating" id="r1">
+				<label for="r1"></label>
 
-        
-     <!-- <div class="rating">
+				<input type="radio" name="rating" id="r2">
+				<label for="r2"></label>
 
-        <input type="radio" name="rating" id="r1">
-        <label for="r1"></label>
+				<input type="radio" name="rating" id="r3">
+				<label for="r3"></label>
 
-        <input type="radio" name="rating" id="r2">
-        <label for="r2"></label>
+				<input type="radio" name="rating" id="r4">
+				<label for="r4"></label>
 
-        <input type="radio" name="rating" id="r3">
-        <label for="r3"></label>
+				<input type="radio" name="rating" id="r5">
+				<label for="r5"></label>
 
-        <input type="radio" name="rating" id="r4">
-        <label for="r4"></label>
-
-        <input type="radio" name="rating" id="r5">
-        <label for="r5"></label>
-
-      </div>
-        
-      </div> --> 
-      <!-- end details -->
-                        
-                        
-                  
+			</div>
+				
+			</div> --> 
+			<!-- end details -->
 
 <div class="container1 px-5 py-5">
 
-
 <div class="card mb-3 px-5" style="max-width: 80%;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-    <%= link_to image_tag(@movie.movie_picture, style:'width:80%') %>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-                        <h4 class="card-title"><%= @movie.title %></h4>
-                        <p class="card-text"><p>Director: <%= @movie.director%></p></p>
-                        <p class="card-text"><p>Year Of Release: <%= @movie.release_date%></p>
-                        <p class="card-text"><p>Synopsis: <%= @movie.synopsis%></p></p>
-                        <p> <%= link_to 'Back', movies_path %> ||
-                          <%= link_to 'Edit', edit_movie_path(@movie) %>
-                        
-                    </div>
-                    <div class="section-comments">
-                    <h3 class="share">Give your opinion on the movie =></h3>
-                    <div class="container">
-                      <%= form_tag (movie_comments_path(@movie.id)) do %>
-            
-                        <div class="form-group">
-                          <%= text_area_tag 'description', nil, class: "form-control area" %>
-                        </div>
-                        <div class="submit-comment">
-                        <%= submit_tag "Submit!", class: 'btn btn-primary' %>
-                      </div>
-                      <%end%>
-                  
-                      <div class="list-comments">
-                        <h2>Comments of Movie: </2>
-                        <% @comments.each do |comment| %>
-                          <p><%= comment.description %></p>
-                        <if comment.movie_id == @movie.id %>
-                        <% end %>
-                      </div>
-                    </div>
-                  </div>
-    </div>
+	<div class="row no-gutters">
+		<div class="col-md-4">
+		<%= link_to image_tag(@movie.movie_picture, style:'width:80%') %>
+		</div>
+		<div class="col-md-8">
+				<h4 class="card-title"><%= @movie.title %></h4>
+			<div class="card-body">
+				<p class="card-text"><p>Director: <%= @movie.director%></p></p>
+				<p class="card-text"><p>Year Of Release: <%= @movie.release_date%></p>
+				<p class="card-text"><p>Synopsis: <%= @movie.synopsis%></p></p>
+				<p> <%= link_to 'Back', movies_path %> ||
+				<%= link_to 'Edit', edit_movie_path(@movie) %>
 
-  </div>
+        <div class="list-actors">
+						<h2> Actors of Movie:</h2>
+          <% if @movie_actors == @movie.actors %>
+						<% @actors.each do |actor| %>
+							<p><%= actor.full_name %></p>
+						<% end %>
+          <% end %>
+					</div>
 
+			</div>
+			<div class="section-comments">
+				<h3 class="share">Give your opinion on the movie =></h3>
+
+				<div class="container">
+					<%= form_tag (movie_comments_path(@movie.id)) do %>
+						<div class="form-group">
+							<%= text_area_tag 'description', nil, class: "form-control area" %>
+						</div>
+						<div class="submit-comment">
+							<%= submit_tag "Submit!", class: 'btn btn-primary' %>
+						</div>
+					<%end%>
+
+					<div class="list-comments">
+						<h2>Comments of Movie: </2>
+						<% @comments.each do |comment| %>
+							<p><%= comment.description %></p>
+						<% end %>
+					</div>
+
+					<div class="list-actors">
+						<h2> Actors of Movie:</h2>
+						<% @actors.each do |actor| %>
+							<p><%= actor.full_name %></p>
+						<% end %>
+					</div>
+
+          <div class="list-actors">
+						<h2> Musics of Movie:</h2>
+						<% @musics.each do |music| %>
+							<p><%= music.band %></p>
+							<p><%= music.title %></p>
+						<% end %>
+					</div>
+
+				</div>
+			</div>		
+		</div>
+	</div>
 </div>
-
 </div>
