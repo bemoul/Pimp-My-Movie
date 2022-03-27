@@ -23,8 +23,9 @@
 			<!-- end details -->
 
 <div class="container1 px-5 py-5">
-
 <div class="card mb-3 px-5" style="max-width: 80%;">
+<div class="list-actors">
+	</div>
 	<div class="row no-gutters">
 		<div class="col-md-4">
 		<%= link_to image_tag(@movie.movie_picture, style:'width:80%') %>
@@ -32,11 +33,25 @@
 		<div class="col-md-8">
 				<h4 class="card-title"><%= @movie.title %></h4>
 			<div class="card-body">
-				<p class="card-text"><p>Director: <%= @movie.director%></p></p>
-				<p class="card-text"><p>Year Of Release: <%= @movie.release_date%></p>
-				<p class="card-text"><p>Synopsis: <%= @movie.synopsis%></p></p>
-				<p> <%= link_to 'Back', movies_path %> ||
-				<%= link_to 'Edit', edit_movie_path(@movie) %>
+				<p class="card-text"><h6>Director: <%= @movie.director%></h6></h6>
+				<p class="card-text"><h6>Year Of Release: <%= @movie.release_date%></p>
+				<p class="card-text"><h6>Synopsis: <%= @movie.synopsis%></h6></h6>
+				<p class="edit-movie"> <%= link_to 'Back', movies_path %> ||
+				<%= link_to 'Edit', edit_movie_path(@movie) %></p>
+
+          <div class="list-musics">
+						<h5>Original Soundtrack :</h5>
+						<% @musics.each do |music| %>
+							<h6><%= music.band %></h6>
+							<h6><%= music.title %></h6>
+						<% end %>
+					</div>
+          <div class="list-actors">
+            <h5> Actors of Movie:</h5>
+		        <% @actors.each do |actor| %>
+			        <h6><%= actor.full_name %></h6>
+		        <% end %>
+          </div>
 
 			</div>
 			<div class="section-comments">
@@ -53,13 +68,11 @@
 					<%end%>
 
 					<div class="list-comments">
-						<h2>Comments of Movie: </2>
+						<h5>Comments of Movie: </h5>
 						<% @comments.each do |comment| %>
-							<p><%= comment.description %></p>
+							<h5><%= comment.description %></h5>
 						<% end %>
 					</div>
-
-					
 
 				</div>
 			</div>		

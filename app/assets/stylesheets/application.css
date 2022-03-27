@@ -408,6 +408,30 @@
       text-align: center;
     }
 
+    .list-actors {
+      text-align: right;
+      font-family: Fira-Code;
+      font-size: 10px;
+    }
+
+    h5 {
+      font-family: Montserrat;
+      font-size: 10px;
+      margin-right: 20px;
+      color: white;
+    }
+
+    h6 {
+      font-size: 11px;
+      color: white;
+    }
+
+    .edit-movie{
+      text-align: right;
+      color: white;
+      font-size: 11px;
+
+    }
     .submit-comment {
       text-align: right;
       margin-bottom: 10%;

@@ -15,12 +15,8 @@ class MoviesController < ApplicationController
   def show
     @movie = Movie.find(params[:id])
     @comments = Comment.all.where(movie:@movie)
-
-    #@actors = Actor.all
-    #@actors = Actor.all.where(movie:@movie)
     @actors = @movie.actors
-    #@movie_actors = MovieActor.all.where(actor_id:@actor_id)
-
+    @ratings = @movie.ratings
     @musics = @movie.musics
   end
 
