@@ -35,7 +35,7 @@
 			<div class="card-body">
 				<p class="card-text"><h6>Director: <%= @movie.director%></h6></h6>
 				<p class="card-text"><h6>Year Of Release: <%= @movie.release_date%></p>
-				<p class="card-text"><h6>Synopsis: <%= @movie.synopsis%></h6></h6>
+				<p class="card-text"><h3>Synopsis: <%= @movie.synopsis%></h3></h3>
 				<p class="edit-movie"> <%= link_to 'Back', movies_path %> ||
 				<%= link_to 'Edit', edit_movie_path(@movie) %></p>
 
