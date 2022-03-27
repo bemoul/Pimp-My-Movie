@@ -38,15 +38,6 @@
 				<p> <%= link_to 'Back', movies_path %> ||
 				<%= link_to 'Edit', edit_movie_path(@movie) %>
 
-        <div class="list-actors">
-						<h2> Actors of Movie:</h2>
-          <% if @movie_actors == @movie.actors %>
-						<% @actors.each do |actor| %>
-							<p><%= actor.full_name %></p>
-						<% end %>
-          <% end %>
-					</div>
-
 			</div>
 			<div class="section-comments">
 				<h3 class="share">Give your opinion on the movie =></h3>
@@ -68,20 +59,7 @@
 						<% end %>
 					</div>
 
-					<div class="list-actors">
-						<h2> Actors of Movie:</h2>
-						<% @actors.each do |actor| %>
-							<p><%= actor.full_name %></p>
-						<% end %>
-					</div>
-
-          <div class="list-actors">
-						<h2> Musics of Movie:</h2>
-						<% @musics.each do |music| %>
-							<p><%= music.band %></p>
-							<p><%= music.title %></p>
-						<% end %>
-					</div>
+					
 
 				</div>
 			</div>		
