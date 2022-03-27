@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
   validates :style, presence: true
-  belongs_to :movie
+  has_many :movie_categories
+  has_many :movies, through: :movie_categories
 end
