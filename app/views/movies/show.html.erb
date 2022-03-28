@@ -1,19 +1,28 @@
+			<p id="notice"><%= notice %></p>
 
+		 <!-- <div class="rating">
 
-      <p id="notice"><%= notice %></p>
+				<input type="radio" name="rating" id="r1">
+				<label for="r1"></label>
 
+<<<<<<< HEAD
 
      <!-- <div class="rating">
+=======
+				<input type="radio" name="rating" id="r2">
+				<label for="r2"></label>
+>>>>>>> 97039ba33a5ae89ad99a8714c6ce2091b6ea6773
 
-        <input type="radio" name="rating" id="r1">
-        <label for="r1"></label>
+				<input type="radio" name="rating" id="r3">
+				<label for="r3"></label>
 
-        <input type="radio" name="rating" id="r2">
-        <label for="r2"></label>
+				<input type="radio" name="rating" id="r4">
+				<label for="r4"></label>
 
-        <input type="radio" name="rating" id="r3">
-        <label for="r3"></label>
+				<input type="radio" name="rating" id="r5">
+				<label for="r5"></label>
 
+<<<<<<< HEAD
         <input type="radio" name="rating" id="r4">
         <label for="r4"></label>
 
@@ -27,32 +36,73 @@
 
 
 
+=======
+			</div>
+				
+			</div> --> 
+			<!-- end details -->
+>>>>>>> 97039ba33a5ae89ad99a8714c6ce2091b6ea6773
 
 <div class="container1 px-5 py-5">
-
-
 <div class="card mb-3 px-5" style="max-width: 80%;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-    <%= link_to image_tag(@movie.movie_picture, style:'width:300px') %>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-                        <h4 class="card-title"><%= @movie.title %></h4>
-                        <p class="card-text"><p>Director: <%= @movie.director%></p></p>
-                        <p class="card-text"><p>Release date: <%= @movie.release_date%></p>
-                        <p class="card-text"><p>Synopsis: <%= @movie.synopsis%></p></p>
-                        <p> <%= link_to 'Back', movies_path %> ||
-                        <% if current_user.id == @movie.user.id %>
-                          <%= link_to 'Edit', edit_movie_path(@movie) %>
-                        <% else %>
-                        <% end %> </p>
-                    </div>
+<div class="list-actors">
+	</div>
+	<div class="row no-gutters">
+		<div class="col-md-4">
+		<%= link_to image_tag(@movie.movie_picture, style:'width:80%') %>
+		</div>
+		<div class="col-md-8">
+				<h4 class="card-title"><%= @movie.title %></h4>
+			<div class="card-body">
+				<p class="card-text"><h6>Director: <%= @movie.director%></h6></h6>
+				<p class="card-text"><h6>Year Of Release: <%= @movie.release_date%></p>
+				<p class="card-text"><h3>Synopsis: <%= @movie.synopsis%></h3></h3>
+				<p class="edit-movie"> <%= link_to 'Back', movies_path %> ||
+				<%= link_to 'Edit', edit_movie_path(@movie) %></p>
 
-    </div>
+          <div class="list-musics">
+						<h5>Original Soundtrack :</h5>
+						<% @musics.each do |music| %>
+							<h6><%= music.band %></h6>
+							<h6><%= music.title %></h6>
+						<% end %>
+					</div>
+          <div class="list-actors">
+            <h5> Actors of Movie:</h5>
+		        <% @actors.each do |actor| %>
+			        <h6><%= actor.full_name %></h6>
+		        <% end %>
+          </div>
 
-  </div>
+			</div>
+			<div class="section-comments">
+				<h3 class="share">Give your opinion on the movie =></h3>
+
+				<div class="container">
+					<%= form_tag (movie_comments_path(@movie.id)) do %>
+						<div class="form-group">
+							<%= text_area_tag 'description', nil, class: "form-control area" %>
+						</div>
+						<div class="submit-comment">
+							<%= submit_tag "Submit!", class: 'btn btn-primary' %>
+						</div>
+					<%end%>
+
+					<div class="list-comments">
+						<h5>Comments of Movie: </h5>
+						<% @comments.each do |comment| %>
+							<h5><%= comment.description %></h5>
+						<% end %>
+					</div>
+
+				</div>
+			</div>		
+		</div>
+	</div>
+</div>
+<<<<<<< HEAD
 
 </div>
-
+=======
 </div>
+>>>>>>> 97039ba33a5ae89ad99a8714c6ce2091b6ea6773
