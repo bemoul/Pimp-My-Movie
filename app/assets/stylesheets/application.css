@@ -128,7 +128,7 @@
             color: white;
             font-family: 'Fira Code';
             font-size: 16px;
-            font-weight: 400;
+            font-weight: 100;
             line-height: 1.20;
             opacity: 1.00;
             margin-top: 30px;
@@ -141,12 +141,12 @@
         h4 {
             color: white!important;
             font-family: 'Fira Code';
-            font-size: 40px;
+            font-size: 20px;
             font-weight: 400;
             line-height: 1.20;
             opacity: 1.00;
-            margin-top: 30px;
-            margin-bottom: 5px;
+            margin-top: 0px;
+            margin-bottom: 0%;
             letter-spacing: 0.00px;
             word-spacing: 0.00px;
             text-transform: none;
@@ -408,6 +408,30 @@
       text-align: center;
     }
 
+    .list-actors {
+      text-align: right;
+      font-family: Fira-Code;
+      font-size: 10px;
+    }
+
+    h5 {
+      font-family: Montserrat;
+      font-size: 10px;
+      margin-right: 20px;
+      color: white;
+    }
+
+    h6 {
+      font-size: 11px;
+      color: white;
+    }
+
+    .edit-movie{
+      text-align: right;
+      color: white;
+      font-size: 11px;
+
+    }
     .submit-comment {
       text-align: right;
       margin-bottom: 10%;

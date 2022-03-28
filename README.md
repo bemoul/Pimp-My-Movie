@@ -16,7 +16,30 @@ Le site est en live ici 👉 [Pimp My Movie](https://pimpmymovie.herokuapp.com)
 <br>
 <br>
 
+## 🛠️ Installation Steps
 
+1. Bundle install
+
+```bash
+if good, follow-up,
+  else
+retry yourself
+```
+
+2. rails:db:migrate
+
+```bash
+if good, follow-up
+  else
+retry yourself
+```
+3. Run the app
+
+```bash
+wp m8 <3
+```
+
+🌟 You are all set!
 ## Crédit 🔗
 [Selim RAMDANI](https://github.com/curlyroots)<br>
 [Sarah COPPIN](https://github.com/sacoppin)<br>

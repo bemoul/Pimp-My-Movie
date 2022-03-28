@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 2022_03_28_082512) do
     t.string "full_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "movie_id"
   end
 
   create_table "admin_users", force: :cascade do |t|
@@ -73,7 +72,6 @@ ActiveRecord::Schema.define(version: 2022_03_28_082512) do
     t.string "style"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "movie_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -83,6 +81,42 @@ ActiveRecord::Schema.define(version: 2022_03_28_082512) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "movie_id"
+  end
+
+  create_table "movie_actors", force: :cascade do |t|
+    t.bigint "movie_id"
+    t.bigint "actor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actor_id"], name: "index_movie_actors_on_actor_id"
+    t.index ["movie_id"], name: "index_movie_actors_on_movie_id"
+  end
+
+  create_table "movie_categories", force: :cascade do |t|
+    t.bigint "movie_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_movie_categories_on_category_id"
+    t.index ["movie_id"], name: "index_movie_categories_on_movie_id"
+  end
+
+  create_table "movie_musics", force: :cascade do |t|
+    t.bigint "movie_id"
+    t.bigint "music_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_movie_musics_on_movie_id"
+    t.index ["music_id"], name: "index_movie_musics_on_music_id"
+  end
+
+  create_table "movie_ratings", force: :cascade do |t|
+    t.bigint "movie_id"
+    t.bigint "rating_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_movie_ratings_on_movie_id"
+    t.index ["rating_id"], name: "index_movie_ratings_on_rating_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -101,7 +135,6 @@ ActiveRecord::Schema.define(version: 2022_03_28_082512) do
     t.string "style"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "movie_id"
   end
 
   create_table "ratings", force: :cascade do |t|
@@ -109,7 +142,6 @@ ActiveRecord::Schema.define(version: 2022_03_28_082512) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.integer "movie_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -125,4 +157,12 @@ ActiveRecord::Schema.define(version: 2022_03_28_082512) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "movie_actors", "actors"
+  add_foreign_key "movie_actors", "movies"
+  add_foreign_key "movie_categories", "categories"
+  add_foreign_key "movie_categories", "movies"
+  add_foreign_key "movie_musics", "movies"
+  add_foreign_key "movie_musics", "musics"
+  add_foreign_key "movie_ratings", "movies"
+  add_foreign_key "movie_ratings", "ratings"
 end

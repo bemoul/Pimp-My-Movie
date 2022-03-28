@@ -24,6 +24,7 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+
     activeadmin (2.9.0)
       arbre (~> 1.2, >= 1.2.1)
       formtastic (>= 3.1, < 5.0)
@@ -33,6 +34,13 @@ GEM
       kaminari (~> 1.0, >= 1.2.1)
       railties (>= 5.2, < 6.2)
       ransack (~> 2.1, >= 2.1.1)
+
+    active_storage_validations (0.9.7)
+      activejob (>= 5.2.0)
+      activemodel (>= 5.2.0)
+      activestorage (>= 5.2.0)
+      activesupport (>= 5.2.0)
+
     activejob (5.2.7)
       activesupport (= 5.2.7)
       globalid (>= 0.3.6)
@@ -313,6 +321,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  active_storage_validations
   aws-sdk-s3
   bootsnap (>= 1.1.0)
   byebug
@@ -344,4 +353,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-   2.3.5
+   2.3.6
