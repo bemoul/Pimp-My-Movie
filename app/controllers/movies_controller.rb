@@ -15,6 +15,9 @@ class MoviesController < ApplicationController
   def show
     @movie = Movie.find(params[:id])
     @comments = Comment.all.where(movie:@movie)
+    @actors = @movie.actors
+    @ratings = @movie.ratings
+    @musics = @movie.musics
   end
 
   # GET /movies/new

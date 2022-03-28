@@ -1,12 +1,12 @@
 
     <div class="card-body-profile">
-        <div class="tab-content">
-            <div class="tab-pane fade show active" id="home">
-            <h5 class="card-title">The list of movies that you created</h5>
-            <% @movies.each do |movie| %>
-                <p class="card-text-profile"><%= movie.title %></p>
-                <% end %>
-                <a href="#" class="btn btn-primary">Do you want to edit your profile ?</a>
-            </div>
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="home">
+          <h5 class="card-title">The list of movies that you created</h5>
+          <% @movies.each do |movie| %>
+            <p class="card-text-profile"><%= movie.title %></p>
+          <% end %>
+          <a href="#" class="btn btn-primary">Do you want to edit your profile ?</a>
         </div>
+      </div>
     </div>
