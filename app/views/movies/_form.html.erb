@@ -11,39 +11,41 @@
     </div>
   <% end %>
 
-<div class="col-2 py-2">
+<div class="movie_form">
+  <div class="col-2 py-2">
 
 
-  <div class="field py-2">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <div class="field py-2">
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+
+    <div class="field py-2">
+      <%= form.label :synopsis %>
+      <%= form.text_area :synopsis %>
+    </div>
+
+    <div class="field py-2">
+      <%= form.label :director %>
+      <%= form.text_field :director %>
+    </div>
+
+    <div class="field py-2">
+      <%= form.label :release_date %>
+      <%= form.number_field :release_date %>
+    </div>
+
+
+    <div class="field">
+      <%= form.label :movie_picture %>
+      <%= form.file_field :movie_picture %>
+    </div>
+
+    <div class="actions">
+
+    <div class="actions py-4">
+      <%= form.submit %>
+    </div>
+  <% end %>
   </div>
-
-  <div class="field py-2">
-    <%= form.label :synopsis %>
-    <%= form.text_area :synopsis %>
-  </div>
-
-  <div class="field py-2">
-    <%= form.label :director %>
-    <%= form.text_field :director %>
-  </div>
-
-  <div class="field py-2">
-    <%= form.label :release_date %>
-    <%= form.number_field :release_date %>
-  </div>
-
-
-  <div class="field">
-    <%= form.label :movie_picture %>
-    <%= form.file_field :movie_picture %>
-  </div>
-
-  <div class="actions">
-
-  <div class="actions py-4">
-    <%= form.submit %>
-  </div>
-<% end %>
 </div>

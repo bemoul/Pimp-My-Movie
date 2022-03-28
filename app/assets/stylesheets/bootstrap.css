@@ -2363,7 +2363,7 @@
    background-position: right 1.5rem center;
    background-size: 16px 12px;
    border: 0 solid #ced4da;
-   border-radius: 0;
+   border-radius: 30px;
    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
    -webkit-appearance: none;
    -moz-appearance: none;
