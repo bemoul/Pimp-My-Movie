@@ -128,7 +128,7 @@
             color: white;
             font-family: 'Fira Code';
             font-size: 16px;
-            font-weight: 400;
+            font-weight: 100;
             line-height: 1.20;
             opacity: 1.00;
             margin-top: 30px;
@@ -141,12 +141,12 @@
         h4 {
             color: white!important;
             font-family: 'Fira Code';
-            font-size: 40px;
+            font-size: 20px;
             font-weight: 400;
             line-height: 1.20;
             opacity: 1.00;
-            margin-top: 30px;
-            margin-bottom: 5px;
+            margin-top: 0px;
+            margin-bottom: 0%;
             letter-spacing: 0.00px;
             word-spacing: 0.00px;
             text-transform: none;
@@ -353,3 +353,91 @@
             justify-content: center;
             background-color: rgba(102, 102, 102, 0.212);
         }
+    
+    .movie_picture {
+        padding-top: 30px;
+        align-items: center;
+        display: inline-flex;
+    }
+    
+    .col-4 {
+      margin: 0%;
+        padding-top: 30px;
+        margin-left: 30px;
+    }
+
+    .row {
+        justify-content: center;
+        width: 100%;
+        }
+
+    .edit-movie {
+      text-align: end;
+    }
+
+    .add-movie{
+      text-align: center;
+      font-weight: bold;
+      font-family: Poppins;
+      text-transform: capitalize;
+      margin-bottom: 20px;
+    }
+
+    .big-title{
+      letter-spacing: 1em;
+      color: whitesmoke;
+      font-family: Montserrat;
+      text-align: center;
+    }
+
+    .card-body-profile{
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .card-text-profile{
+      margin: 0;
+    }
+
+    .section-comment{
+      margin-top: 20%;
+    }
+
+    .list-comments {
+      margin: 0;
+      text-align: center;
+    }
+
+    .list-actors {
+      text-align: right;
+      font-family: Fira-Code;
+      font-size: 10px;
+    }
+
+    h5 {
+      font-family: Montserrat;
+      font-size: 10px;
+      margin-right: 20px;
+      color: white;
+    }
+
+    h6 {
+      font-size: 11px;
+      color: white;
+    }
+
+    .edit-movie{
+      text-align: right;
+      color: white;
+      font-size: 11px;
+
+    }
+    .submit-comment {
+      text-align: right;
+      margin-bottom: 10%;
+    }
+
+    .share{
+      text-align: right;
+      margin-bottom: 2%;
+    }
