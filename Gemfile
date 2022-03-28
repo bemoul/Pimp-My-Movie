@@ -5,6 +5,7 @@ ruby '2.7.4'
 gem 'table_print'
 gem 'devise'
 gem 'dotenv-rails'
+gem 'active_storage_validations'
 gem 'aws-sdk-s3', require: false
 gem 'activeadmin'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
