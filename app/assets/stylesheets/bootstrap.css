@@ -159,8 +159,8 @@
 
  abbr[title],
  abbr[data-bs-original-title] {
-   -webkit-text-decoration: underline dotted;
-   text-decoration: underline dotted;
+   -webkit-text-decoration: none dotted;
+   text-decoration: none dotted;
    cursor: help;
    -webkit-text-decoration-skip-ink: none;
    text-decoration-skip-ink: none;
@@ -236,7 +236,7 @@
 
  a {
    color: white;
-   text-decoration: underline;
+   text-decoration: none;
  }
 
  a:hover {
@@ -3612,7 +3612,7 @@
  .btn-link {
    font-weight: 400;
    color: #1a1a1a;
-   text-decoration: underline;
+   text-decoration: none;
  }
 
  .btn-link:hover {
@@ -8036,7 +8036,7 @@
  }
 
  .text-decoration-underline {
-   text-decoration: underline !important;
+   text-decoration: none !important;
  }
 
  .text-decoration-line-through {

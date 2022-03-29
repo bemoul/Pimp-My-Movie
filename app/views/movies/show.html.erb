@@ -5,13 +5,8 @@
 				<input type="radio" name="rating" id="r1">
 				<label for="r1"></label>
 
-<<<<<<< HEAD
 
      <!-- <div class="rating">
-=======
-				<input type="radio" name="rating" id="r2">
-				<label for="r2"></label>
->>>>>>> 97039ba33a5ae89ad99a8714c6ce2091b6ea6773
 
 				<input type="radio" name="rating" id="r3">
 				<label for="r3"></label>
@@ -22,7 +17,6 @@
 				<input type="radio" name="rating" id="r5">
 				<label for="r5"></label>
 
-<<<<<<< HEAD
         <input type="radio" name="rating" id="r4">
         <label for="r4"></label>
 
@@ -36,12 +30,6 @@
 
 
 
-=======
-			</div>
-				
-			</div> --> 
-			<!-- end details -->
->>>>>>> 97039ba33a5ae89ad99a8714c6ce2091b6ea6773
 
 <div class="container1 px-5 py-5">
 <div class="card mb-3 px-5" style="max-width: 80%;">
@@ -83,26 +71,25 @@
 						<div class="form-group">
 							<%= text_area_tag 'description', nil, class: "form-control area" %>
 						</div>
-						<div class="submit-comment">
+						<div class="submit-comment py-4">
 							<%= submit_tag "Submit!", class: 'btn btn-primary' %>
 						</div>
 					<%end%>
 
+
 					<div class="list-comments">
 						<h5>Comments from users : </h5>
 						<% @comments.each do |comment| %>
-							<h5><%= comment.description %></h5>
+						<div class="list-comments py-3">
+							<h5 class ="px-2 py-1"><%= comment.description %></h5>
+							</div>
 						<% end %>
-					</div>
+
 
 				</div>
-			</div>		
+			</div>
 		</div>
 	</div>
 </div>
-<<<<<<< HEAD
 
 </div>
-=======
-</div>
->>>>>>> 97039ba33a5ae89ad99a8714c6ce2091b6ea6773
