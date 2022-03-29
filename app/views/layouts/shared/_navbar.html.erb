@@ -25,15 +25,8 @@
               </li>
 
 
-              <%
-=begin%>
- <% if admin_user_url%>
-                <a class="nav-link"<%= linkt_to "Admin dashboard", new_admin_user_session_path%></a>
-      
+
               
-              <% end %> 
-<%
-=end%>
 
               <% if current_user %>
               
@@ -42,9 +35,9 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" <%= link_to "Profile", profiles_path %></a>
+                <a class="nav-link" <%= link_to "Profile", profiles_path %>
               </li>
-            
+
               <% else %>
               <li class="nav-item">
                 <a class="nav-link" <%= link_to 'Log in', new_user_session_path %></a>
