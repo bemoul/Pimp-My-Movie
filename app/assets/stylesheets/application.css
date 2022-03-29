@@ -19,18 +19,18 @@
     }
 
     .jumbotron {
-    background-image: url("https://www.linkpicture.com/q/jumbotron_pmm.jpg");
-    background-repeat: no-repeat;
-    width: 100%;
-    background-size: cover;
-    display: flex;
-    flex-direction: flex-start;
-    gap: 4rem;
-    justify-content: center;
-    padding: 6rem 6rem;
-    color: white;
-    background-size: 100%;
-    padding-bottom: 28%;
+          background-image: url("https://www.linkpicture.com/q/jumbotron_pmm.jpg");
+          background-repeat: no-repeat;
+          width: 100%;
+          background-size: cover;
+          display: flex;
+          flex-direction: flex-start;
+          gap: 4rem;
+          justify-content: center;
+          padding: 6rem 6rem;
+          color: white;
+          background-size: 100%;
+          padding-bottom: 28%;
     }
 
     .index__text {

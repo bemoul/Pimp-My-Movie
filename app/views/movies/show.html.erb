@@ -42,9 +42,9 @@
 		<div class="col-md-8">
 				<h4 class="card-title"><%= @movie.title %></h4>
 			<div class="card-body">
-				<p class="card-text"><h6>Director: <%= @movie.director%></h6></h6>
-				<p class="card-text"><h6>Year Of Release: <%= @movie.release_date%></p>
-				<p class="card-text"><h3>Synopsis: <%= @movie.synopsis%></h3></h3>
+				<p class="card-text"><h6>Director : <%= @movie.director%></h6></h6>
+				<p class="card-text"><h6>Year Of Release : <%= @movie.release_date%></p>
+				<p class="card-text"><h3>Synopsis : <%= @movie.synopsis%></h3></h3>
 				<p class="edit-movie"> <%= link_to 'Back', movies_path %> ||
 				<%= link_to 'Edit', edit_movie_path(@movie) %></p>
 
@@ -56,7 +56,7 @@
 						<% end %>
 					</div>
           <div class="list-actors">
-            <h5> Actors of Movie:</h5>
+            <h5>Cast :</h5>
 		        <% @actors.each do |actor| %>
 			        <h6><%= actor.full_name %></h6>
 		        <% end %>
@@ -64,7 +64,7 @@
 
 			</div>
 			<div class="section-comments">
-				<h3 class="share">Give your opinion on the movie =></h3>
+				<h3 class="share">Tell us what you think about this movie :</h3>
 
 				<div class="container">
 					<%= form_tag (movie_comments_path(@movie.id)) do %>
@@ -78,6 +78,8 @@
 <h5>Comments of Movie: </h5>
 
 
+					<div class="list-comments">
+		
 						<% @comments.each do |comment| %>
 						<div class="list-comments py-3">
 							<h5 class ="px-2 py-1"><%= comment.description %></h5>
