@@ -92,24 +92,6 @@
         padding-left: 30px;
     }
 
-    h1 {
-        color: white;
-        font-family: 'Fira Code'!important;
-        text-align: center;
-        font-size: 30px;
-        font-weight: 100;
-        line-height: 1.20;
-        opacity: 0.85;
-        margin-top: 30px;
-        margin-bottom: 5px;
-        letter-spacing: -0.68px;
-        word-spacing: 0.00px;
-        text-transform: none;
-    }
-
-    p {
-        color: white;
-    }
 
     h2 {
         color: white;
@@ -180,7 +162,7 @@
         margin-top: 10px;
         padding: 15px;
         display: flex;
-        text-decoration: none;
+        text-decoration: none!important;
     }
 
     li .profile {
@@ -354,64 +336,7 @@
             text-transform: none;
         }
 
-        p {
-            color: white;
-        }
 
-        h2 {
-            color: white;
-            font-family: 'Fira Code';
-            font-size: 28px;
-            font-weight: 300;
-            line-height: 1.20;
-            opacity: 0.85;
-            margin-top: 30px;
-            margin-bottom: 5px;
-            letter-spacing: -0.68px;
-            word-spacing: 0.00px;
-            text-transform: none;
-        }
-
-        h3 {
-            color: white;
-            font-family: 'Fira Code';
-            font-size: 16px;
-            font-weight: 100;
-            line-height: 1.20;
-            opacity: 1.00;
-            margin-top: 30px;
-            margin-bottom: 5px;
-            letter-spacing: 0.00px;
-            word-spacing: 0.00px;
-            text-transform: none;
-        }
-
-        h4 {
-            color: white!important;
-            font-family: 'Fira Code';
-            font-size: 20px;
-            font-weight: 400;
-            line-height: 1.20;
-            opacity: 1.00;
-            margin-top: 0px;
-            margin-bottom: 0%;
-            letter-spacing: 0.00px;
-            word-spacing: 0.00px;
-            text-transform: none;
-        }
-
-        p {
-            font-family: 'Fira Code';
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 1.60;
-            opacity: 0.70;
-            margin-top: 0px;
-            margin-bottom: 25px;
-            letter-spacing: -0.30px;
-            word-spacing: -0.10px;
-            text-transform: none;
-        }
 
         #section-nav {
             font-family: 'Fira Code';
@@ -587,6 +512,7 @@
             font-family: Poppins;
             text-transform: capitalize;
             margin-bottom: 20px;
+
         }
 
         .big-title {
@@ -599,6 +525,7 @@
         .movie_form {
             display: flex;
             justify-content: center;
+
             background-color: rgba(102, 102, 102, 0.212);
         }
     }
@@ -693,3 +620,9 @@
       text-align: right;
       margin-bottom: 2%;
     }
+.field1 {
+  display: flex;
+  word-wrap: break-word;
+  justify-content: flex-start;
+  font-size:1vw;
+}

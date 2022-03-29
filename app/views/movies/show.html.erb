@@ -75,11 +75,11 @@
 							<%= submit_tag "Submit!", class: 'btn btn-primary' %>
 						</div>
 					<%end%>
-<h5>Comments of Movie: </h5>
+					<h5>Comments of Movie: </h5>
 
 
 					<div class="list-comments">
-		
+
 						<% @comments.each do |comment| %>
 						<div class="list-comments py-3">
 							<h5 class ="px-2 py-1"><%= comment.description %></h5>
