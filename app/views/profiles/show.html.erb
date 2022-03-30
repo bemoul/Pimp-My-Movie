@@ -11,25 +11,3 @@
       </div>
     </div>
 
-    <div class="container pt-2">
-
-
-
-<div class="card mb-3 p-5 m-5 border-0" style="max-width: 1200px;">
-   <div class="row no-gutters">
-     <div class="col-md-4">
-       <% if @user.avatar.attached? %>
-         <%= image_tag @user.avatar, width: "70%" %>
-       <% end %>
-     </div>
-     <div class="col-md-8" style="margin-bottom: 30px;">
-       <div class="card-body">
-         <h5 class="card-title"><%= @user.first_name %></h5>
-         <p class="card-text"><%= @user.last_name %></p>
-         <p class="card-text"><small class="text-muted"><%= link_to "Éditer mon profil", edit_user_registration_path(@user.id) %> |
-         <%= link_to 'Back', root_path %></small></p>
-       </div>
-     </div>
-   </div>
- </div>
-</div>
