@@ -467,3 +467,9 @@
      justify-content: flex-start;
      font-size: 1vw;
  }
+ .radius_form {
+   border-radius: 20px;
+
+ }
+ .padder {
+ }
