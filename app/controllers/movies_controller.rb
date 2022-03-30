@@ -4,14 +4,7 @@ class MoviesController < ApplicationController
 
 
   def home
-    @movies = Movie.all
-    # puts "********bonjour"
-    #  @title = "pulp fiction"
-    # @movies_api = Tmdb::Movie.find(@title)
-    # puts @movies_api.last.title
-    # puts @movies_api.last.release_date
-    # puts "********aurevoir"
-
+    @movies = Movie.search(params[:search])
   end
   
   # GET /movies or /movies.json
@@ -25,6 +18,7 @@ class MoviesController < ApplicationController
     @comments = Comment.all.where(movie:@movie)
     @actors = @movie.actors
     @ratings = @movie.ratings
+    @categories = @movie.categories
     @musics = @movie.musics
   end
 
@@ -46,10 +40,23 @@ class MoviesController < ApplicationController
   def create
     @movie = current_user.movies.build(movie_params)
     hash = ImdbService.new()
+    escaped_title = CGI.escape(@movie.title)
     @movie.image = hash.get_image_by_title(escaped_title)
     @movie.synopsis = hash.get_synopsis_by_title(@movie.title)
     @movie.director = hash.get_director_by_title(@movie.title)
- 
+    @movie.actors = hash.get_actors_by_title(@movie.title)
+    @movie.categories = hash.get_categories_by_title(@movie.title)
+    #@movie.release_date = hash.get_release_date_by_title(@movie.title)
+    # #user.avatar.attach(params[:avatar])
+     @movie.image = hash.get_image_by_title(@movie.title)
+     @mon_image = hash.get_image_by_title(@movie.title)
+    #  open(@mon_image) do |file|
+    #  file << open(image_url).read
+     
+    #  @mon_image.file = file
+    #  @mon_image.save
+    #  @movie.image.attach(hash.get_image_by_title(@movie.title))
+    # end
     respond_to do |format|
       if @movie.save
         format.html { redirect_to movie_url(@movie), notice: "Movie was successfully created." }
@@ -92,12 +99,17 @@ class MoviesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def movie_params
-      params.require(:movie).permit(:title, :synopsis, :director, :release_date, :movie_picture)
+      params.require(:movie).permit(:title, :synopsis, :director, :release_date, :movie_id, :search)
     end
 
     def comment_params
       params.require(:comment).permit(:description)
     end
+
+    def actor_params
+      params.require(:actor).permit(:full_name)
+    end
+
 
     def authenticate_user
       unless current_user

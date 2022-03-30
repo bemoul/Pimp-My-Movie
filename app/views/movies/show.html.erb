@@ -37,7 +37,6 @@
     </div>
     <div class="row no-gutters">
         <div class="col-md-4">
-        <%= link_to image_tag(@movie.movie_picture, style:'width:80%') %>
         </div>
         <div class="col-md-8">
                 <h4 class="card-title"><%= @movie.title %></h4>
@@ -63,6 +62,31 @@
           </div>
 
             </div>
+
+            <div class="container">
+              <%= form_tag (movie_ratings_path(@movie.id)) do %>
+              <div class="form-group">
+                <%= text_field_tag 'rate', nil, class: "form-control" %>
+              </div>
+              <div class="submit">
+                <%= submit_tag "Submits", class: 'btn btn1' %>
+              </div>
+            </div>
+            <% end %>
+
+            <div class="list-comments">
+              <% @ratings.each do |rating| %>
+                <div class="list-comments py-3">
+                  <h5 class ="px-2 py-1"><%= rating.rate %></h5>
+                </div>
+              <% end %>
+            </div>
+
+            <% @categories.each do |category| %>
+                    <h6><%= category.style %></h6>
+                <% end %>
+
+
             <div class="section-comments">
                 <h3 class="share">Tell us what you think about this movie :</h3>
 
