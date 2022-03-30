@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Hubballi&family=Montserrat:wght@100&family=Poppins:wght@400;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 
     <script src="https://js.stripe.com/v3/"></script>
@@ -19,9 +20,12 @@
   <body>
 
   <%= render 'layouts/shared/navbar' %>
-  
-    <%= yield %>
 
+    <%= yield %>
+  <%= render 'layouts/shared/footer' %> 
   </body>
-  <%= render 'layouts/shared/footer' %>
+
+  
+  
+
 </html>
