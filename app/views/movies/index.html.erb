@@ -2,16 +2,16 @@
 <div class="container px-5">
   <div class="index__text1 px-5">
 
-<%= form_tag(movies_path, method: :get) do %>
-     <%= text_field_tag(:search, params[:search]) %>
-     <%= submit_tag ("Search")%>
-<% end %>
-
 <h3 class="add-movie"> Want to add a movie ? <%= link_to "Click here", new_movie_path %><i class="fa-solid fa-camera-movie"></i> </h3>
 </div>
 </div>
 
-  
+    <div class="container d-flex flex-wrap px-5 py-1 ">
+          <% @movies.each do |movie| %>
+            <div class="card align-item-center px-5" style="width: 18rem;">
+            <%= link_to movie do %>
+                <%= image_tag(movie.movie_picture, style:'width: 200px') if movie.movie_picture.attached? %>
+              <% end %>
             
                 <div class="card-body">
                   <p class="card-title lead"><%= movie.title %></p>
