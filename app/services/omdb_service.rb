@@ -22,4 +22,11 @@ class OmdbService
     parsed_response["Director"]
   end
 
+  def get_actor_by_title(title)
+    response = HTTP.get("http://www.omdbapi.com/?apikey=#{ENV["OMDB_API_KEY"]
+    }&t=#{title}").to_s
+    parsed_response = JSON.parse(response)
+    parsed_response["Actors"]
+  end
+
 end
