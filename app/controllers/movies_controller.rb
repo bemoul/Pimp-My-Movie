@@ -19,6 +19,7 @@ class MoviesController < ApplicationController
     @actors = @movie.actors
     @ratings = @movie.ratings
     @musics = @movie.musics
+    @categories = @movie.categories
   end
 
   # GET /movies/new
