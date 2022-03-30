@@ -38,7 +38,21 @@ class MoviesController < ApplicationController
   # POST /movies or /movies.json
   def create
     @movie = current_user.movies.build(movie_params)
- 
+    hash = OmdbService.new()
+    #escaped_title = CGI.escape(@movie.title)
+    @movie.synopsis = hash.get_synopsis_by_title(@movie.title)
+    @movie.director = hash.get_director_by_title(@movie.title)
+    @actors_name = hash.get_actor_by_title(@movie.title)
+    #On découpe le string en plusieurs "entrés" d'une liste
+    @actors_name_array = @actors_name.split(",")
+    #On récupère chacun des acteurs de la liste
+    @actors_name_array.each do |value|
+        #On les sauvent un par un en BDD
+        @actor = Actor.create(full_name: value)
+        #On les ajoutes un par un au movie par une jointure
+        @movie_actor = MovieActor.create(movie: @movie, actor: @actor)
+    end
+
     respond_to do |format|
       if @movie.save
         format.html { redirect_to movie_url(@movie), notice: "Movie was successfully created." }

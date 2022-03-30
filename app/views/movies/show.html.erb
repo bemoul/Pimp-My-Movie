@@ -53,6 +53,46 @@
 		        <% end %>
           </div>
 
+          <div class="list-actors">
+            <h5>Ratings :</h5>
+                <% @ratings.each do |rating| %>
+                    <h6><%= rating.rate %></h6>
+                <% end %>
+          </div>
+
+            </div>
+            <div class="section-comments">
+                <h3 class="share">Tell us what you think about this movie :</h3>
+
+                <div class="container">
+                    <%= form_tag (movie_comments_path(@movie.id)) do %>
+                        <div class="form-group">
+                            <%= text_area_tag 'description', nil, class: "form-control area" %>
+                        </div>
+                        <div class="submit-comment py-2">
+                            <%= submit_tag "Submits", class: 'btn btn1' %>
+                        </div>
+                    <%end%>
+                    <h5>Comments from users: </h5>
+
+
+                    <div class="list-comments">
+
+                        <% @comments.each do |comment| %>
+                        <div class="list-comments py-3">
+                            <h5 class ="px-2 py-1"><%= comment.description %></h5>
+                            </div>
+                        <% end %>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 			</div>
 			<div class="section-comments">
 				<h3 class="share">Give your opinion on the movie =></h3>
@@ -78,5 +118,6 @@
 			</div>		
 		</div>
 	</div>
+
 </div>
 </div>
