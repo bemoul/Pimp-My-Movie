@@ -41,6 +41,8 @@ class MoviesController < ApplicationController
     hash = OmdbService.new()
     escaped_title = CGI.escape(@movie.title)
     @movie.synopsis = hash.get_synopsis_by_title(@movie.title)
+    @movie.director = hash.get_director_by_title(@movie.title)
+    
     respond_to do |format|
       if @movie.save
         format.html { redirect_to movie_url(@movie), notice: "Movie was successfully created." }
