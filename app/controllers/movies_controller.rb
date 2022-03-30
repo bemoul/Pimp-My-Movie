@@ -5,13 +5,6 @@ class MoviesController < ApplicationController
 
   def home
     @movies = Movie.all
-    # puts "********bonjour"
-    #  @title = "pulp fiction"
-    # @movies_api = Tmdb::Movie.find(@title)
-    # puts @movies_api.last.title
-    # puts @movies_api.last.release_date
-    # puts "********aurevoir"
-
   end
   
   # GET /movies or /movies.json
@@ -45,10 +38,6 @@ class MoviesController < ApplicationController
   # POST /movies or /movies.json
   def create
     @movie = current_user.movies.build(movie_params)
-    hash = ImdbService.new()
-    @movie.image = hash.get_image_by_title(escaped_title)
-    @movie.synopsis = hash.get_synopsis_by_title(@movie.title)
-    @movie.director = hash.get_director_by_title(@movie.title)
  
     respond_to do |format|
       if @movie.save
