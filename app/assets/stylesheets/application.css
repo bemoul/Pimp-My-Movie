@@ -467,3 +467,9 @@
      justify-content: flex-start;
      font-size: 1vw;
  }
+ 
+ footer {
+     clear: both;
+     position: relative;
+     margin-top: 100px;
+ }
