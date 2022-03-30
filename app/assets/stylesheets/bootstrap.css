@@ -8297,6 +8297,7 @@ fieldset:disabled .btn {
 
 .text-center {
     text-align: center !important;
+    font-size: small;
 }
 
 .text-decoration-none {
