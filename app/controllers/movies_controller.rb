@@ -38,7 +38,9 @@ class MoviesController < ApplicationController
   # POST /movies or /movies.json
   def create
     @movie = current_user.movies.build(movie_params)
- 
+    hash = OmdbService.new()
+    escaped_title = CGI.escape(@movie.title)
+    @movie.synopsis = hash.get_synopsis_by_title(@movie.title)
     respond_to do |format|
       if @movie.save
         format.html { redirect_to movie_url(@movie), notice: "Movie was successfully created." }
