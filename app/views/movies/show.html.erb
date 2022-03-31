@@ -27,8 +27,8 @@
 <div class="list-actors">
 	</div>
 	<div class="row no-gutters">
-		<div class="col-md-4">
-		<%= link_to image_tag(@movie.movie_picture, style:'width:80%') %>
+	  <div class="col-md-4">
+		  <%= image_tag(@movie.image) %>
 		</div>
 		<div class="col-md-8">
 				<h4 class="card-title"><%= @movie.title %></h4>
@@ -52,7 +52,6 @@
 			        <h6><%= actor.full_name %></h6>
 		        <% end %>
           </div>
-
                   <div class="container">
                     <%= form_tag (movie_ratings_path(@movie.id)) do %>
                         <div class="form-group">
