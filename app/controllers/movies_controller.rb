@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
   def home
     @movies = Movie.all
   end
-  
+
   # GET /movies or /movies.json
   def index
     @movies = Movie.all
