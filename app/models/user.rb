@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :movies
   has_many :comments
   has_many :ratings
+  has_one_attached :avatar
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now

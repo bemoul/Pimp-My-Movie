@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/mdeering/gravatar_image_tag.git
+  revision: c02351f7d6649e2346394e33164a7154e671ec19
+  specs:
+    gravatar_image_tag (1.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -362,6 +368,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faker
+  gravatar_image_tag!
   http
   jbuilder (~> 2.5)
   json
@@ -387,4 +394,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-   2.3.5
+   2.3.6

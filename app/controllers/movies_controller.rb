@@ -38,7 +38,7 @@ class MoviesController < ApplicationController
   def create
     @movie = current_user.movies.build(movie_params)
     hash = OmdbService.new()
-    escaped_title = CGI.escape(@movie.title)
+    #escaped_title = CGI.escape(@movie.title)
     @movie.image = hash.get_image_by_title(@movie.title)
     @movie.synopsis = hash.get_synopsis_by_title(@movie.title)
     @movie.director = hash.get_director_by_title(@movie.title)
