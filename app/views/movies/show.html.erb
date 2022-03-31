@@ -1,65 +1,71 @@
-<p id="notice"><%= notice %></p>
+			<p id="notice"><%= notice %></p>
 
-         <!-- <div class="rating">
+		 <!-- <div class="rating">
 
-                <input type="radio" name="rating" id="r1">
-                <label for="r1"></label>
+				<input type="radio" name="rating" id="r1">
+				<label for="r1"></label>
 
+				<input type="radio" name="rating" id="r2">
+				<label for="r2"></label>
 
-     <!-- <div class="rating">
+				<input type="radio" name="rating" id="r3">
+				<label for="r3"></label>
 
-                <input type="radio" name="rating" id="r3">
-                <label for="r3"></label>
+				<input type="radio" name="rating" id="r4">
+				<label for="r4"></label>
 
-                <input type="radio" name="rating" id="r4">
-                <label for="r4"></label>
+				<input type="radio" name="rating" id="r5">
+				<label for="r5"></label>
 
-                <input type="radio" name="rating" id="r5">
-                <label for="r5"></label>
-
-        <input type="radio" name="rating" id="r4">
-        <label for="r4"></label>
-
-        <input type="radio" name="rating" id="r5">
-        <label for="r5"></label>
-
-      </div>
-
-      </div> -->
-      <!-- end details -->
-
-
-
+			</div>
+				
+			</div> --> 
+			<!-- end details -->
 
 <div class="container1 px-5 py-5">
 <div class="card mb-3 px-5" style="max-width: 80%;">
 <div class="list-actors">
-    </div>
-    <div class="row no-gutters">
-        <div class="col-md-4">
-        <%= link_to image_tag(@movie.movie_picture, style:'width:80%') %>
-        </div>
-        <div class="col-md-8">
-                <h4 class="card-title"><%= @movie.title %></h4>
-            <div class="card-body">
-                <p class="card-text"><h6>Director : <%= @movie.director%></h6></h6>
-                <p class="card-text"><h6>Year Of Release : <%= @movie.release_date%></p>
-                <p class="card-text"><h3>Synopsis : <%= @movie.synopsis%></h3></h3>
-                <p class="edit-movie"> <%= link_to 'Back', movies_path %> ||
-                <%= link_to 'Edit', edit_movie_path(@movie) %></p>
+	</div>
+	<div class="row no-gutters">
+		<div class="col-md-4">
+		<%= link_to image_tag(@movie.movie_picture, style:'width:80%') %>
+		</div>
+		<div class="col-md-8">
+				<h4 class="card-title"><%= @movie.title %></h4>
+			<div class="card-body">
+				<p class="card-text"><h6>Director: <%= @movie.director%></h6></h6>
+				<p class="card-text"><h6>Year Of Release: <%= @movie.release_date%></p>
+				<p class="card-text"><h3>Synopsis: <%= @movie.synopsis%></h3></h3>
+				<p class="edit-movie"> <%= link_to 'Back', movies_path %> ||
+				<%= link_to 'Edit', edit_movie_path(@movie) %></p>
 
           <div class="list-musics">
-                        <h5>Original Soundtrack :</h5>
-                        <% @musics.each do |music| %>
-                            <h6><%= music.band %></h6>
-                            <h6><%= music.title %></h6>
-                        <% end %>
-                    </div>
+						<h5>Original Soundtrack :</h5>
+						<% @musics.each do |music| %>
+							<h6><%= music.band %></h6>
+							<h6><%= music.title %></h6>
+						<% end %>
+					</div>
           <div class="list-actors">
-            <h5>Cast :</h5>
-                <% @actors.each do |actor| %>
-                    <h6><%= actor.full_name %></h6>
-                <% end %>
+            <h5> Actors of Movie:</h5>
+		        <% @actors.each do |actor| %>
+			        <h6><%= actor.full_name %></h6>
+		        <% end %>
+          </div>
+
+                  <div class="container">
+                    <%= form_tag (movie_ratings_path(@movie.id)) do %>
+                        <div class="form-group">
+                            <%= text_area_tag 'rate', nil, class: "form-control area" %>
+                        </div>
+                        <div class="submit-comment py-2">
+                            <%= submit_tag "Submits", class: 'btn btn1' %>
+                        </div>
+                    <%end%>
+
+          <div class="list-actors">
+            <h5>Ratings :</h5>
+              <%= @rating_average %>
           </div>
 
             </div>
@@ -85,12 +91,12 @@
                             <h5 class ="px-2 py-1"><%= comment.description %></h5>
                             </div>
                         <% end %>
+                    </div>
+
 
 
                 </div>
             </div>
         </div>
     </div>
-</div>
-
 </div>

@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   has_many :movies
   has_many :comments
-  has_many :ratings, through: :movies
+  has_many :ratings
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
