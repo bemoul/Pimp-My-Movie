@@ -4,7 +4,7 @@ class OmdbService
    API_PARTIAL_URL = "&apikey=#{ENV['OMDB_API_KEY']}" 
 
     def self.search(search)
-        @results = HTTParty.get(BASE_URL + "#{search}" + API_PARTIAL_URL)
+        @results = HTTP.get(BASE_URL + "#{search}" + API_PARTIAL_URL)
         @results
     end 
 

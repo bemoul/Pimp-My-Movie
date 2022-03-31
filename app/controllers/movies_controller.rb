@@ -7,16 +7,40 @@ class MoviesController < ApplicationController
     @movies = Movie.all
   end
   
+  def search
+    #@movies = Movie.all
+    @movie = Movie.where("title LIKE ?", "%" + params[:q] +"%")
+    puts "*************"
+    @title = 
+    render 'show'
+  end
+
   # GET /movies or /movies.json
   def index
     @movies = Movie.all
-    @search = params[:search]
-        if @search
-            @movie = Movie.find_or_create_from_api(params[:search]) 
-        else 
-            @movies = Movie.page(params[:page])
-        end 
   end
+
+  # def my_search
+  # @movies = Movie.all
+  #   @search = Movie.find_by(title: params[:search])
+  #    puts "*******params*******"
+  #     puts params[:search]
+  #     puts "*******@search*******"
+  #   #Vérifier que la recherche correspond à un film
+  #   @movies.each do |movie|
+  #   if movie.id == @search.id
+  #   @movie = movie
+  #   render :show
+  #     else
+  #       #flash[:error] =
+  #       puts "Ce film n'a pas encore été enregistré dans notre base, mais vous pouvez le créer"
+  #     end
+  # end
+  
+    #Si oui, afficher le film ciorrespondant
+    #Sinon, afficher "Ce film n'a pas encore été enregistré dans notre base, mais vous pouvez le créer"
+    
+  #end
 
   # GET /movies/1 or /movies/1.json
   def show

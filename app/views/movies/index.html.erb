@@ -2,10 +2,18 @@
 <div class="container px-5">
   <div class="index__text1 px-5">
 
-<%= form_tag(movies_path, method: :get) do %>
-     <%= text_field_tag :search, nil, placeholder: 'Search by Title' %>
-     <%= submit_tag ("Search")%>
-<% end %>
+    <form class="form-inline my-2 my-lg-0"action="/search">
+     <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+     <button class="btn btn-outline-succes my-2 mt-sm-0" type="Submit">Search</button>
+    </form>
+
+    <form action="/search">
+      <label for="lname">titre</label><br>
+      <input type="text" name="q"><br><br>
+      <button class="btn btn-outline-succes my-2 my-sm-0" type="submit">recherche</button>
+    </form>
+
+
 
 <h3 class="add-movie"> Want to add a movie ? <%= link_to "Click here", new_movie_path %><i class="fa-solid fa-camera-movie"></i> </h3>
 </div>

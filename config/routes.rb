@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'movies#home'
   resource 'profiles', only: [:show, :edit], :path => "my-account"
   
+  get 'search',to:"movies#search"
   resources 'movies' do
     resources :comments
     resources :ratings
