@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
   def home
     @movies = Movie.all
   end
-  
+
   # GET /movies or /movies.json
   def index
     @movies = Movie.all
@@ -18,6 +18,7 @@ class MoviesController < ApplicationController
     @comments = Comment.all.where(movie:@movie)
     @actors = @movie.actors
     @musics = @movie.musics
+    @ratings = @movie.ratings
   end
 
   # GET /movies/new

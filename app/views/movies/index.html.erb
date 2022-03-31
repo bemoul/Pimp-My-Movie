@@ -1,13 +1,13 @@
-<h2 class="big-title"> List of Movies</h2>
+<h2 class="big-title"> List of Movies</h2></br>
 <div class="container px-5">
   <div class="index__text1 px-5">
 
 <%= form_tag(movies_path, method: :get) do %>
      <%= text_field_tag :search, nil, placeholder: 'Search by Title' %>
-     <%= submit_tag ("Search")%>
+     <%= submit_tag ("Search"), class: 'btn'%>
 <% end %>
 
-<h3 class="add-movie"> Want to add a movie ? <%= link_to "Click here", new_movie_path %><i class="fa-solid fa-camera-movie"></i> </h3>
+<h3 class="add-movie"> Want to add a movie ?<%= link_to "  Click here", new_movie_path %><i class="fa-solid fa-camera-movie"></i> </h3>
 </div>
 </div>
 
