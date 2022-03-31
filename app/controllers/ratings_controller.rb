@@ -14,9 +14,9 @@ class RatingsController < ApplicationController
       movie_id: params[:movie_id]
     )
     if @rating.save
-      redirect_to movies_path
+      redirect_to movie_url(@movie), info: "Your rate has been save!"
     else
-      render @movie
+      redirect_to movie_url(@movie), danger: "Your rate is not save!"
     end
   end
 end
