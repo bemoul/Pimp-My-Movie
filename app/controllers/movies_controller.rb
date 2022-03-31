@@ -19,6 +19,14 @@ class MoviesController < ApplicationController
     @actors = @movie.actors
     @musics = @movie.musics
     @ratings = @movie.ratings
+    @rating_total = 0
+    @total = 1
+    @ratings = @movie.ratings
+    @ratings.each do |rating|
+      @rating_total = @rating_total + rating.rate
+      @total = @total +1
+  end
+    @rating_average = @rating_total / @total
   end
 
   # GET /movies/new
@@ -39,7 +47,8 @@ class MoviesController < ApplicationController
   def create
     @movie = current_user.movies.build(movie_params)
     hash = OmdbService.new()
-    #escaped_title = CGI.escape(@movie.title)
+    escaped_title = CGI.escape(@movie.title)
+    @movie.image = hash.get_image_by_title(@movie.title)
     @movie.synopsis = hash.get_synopsis_by_title(@movie.title)
     @movie.director = hash.get_director_by_title(@movie.title)
     @actors_name = hash.get_actor_by_title(@movie.title)
@@ -96,7 +105,7 @@ class MoviesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def movie_params
-      params.require(:movie).permit(:title, :synopsis, :director, :release_date, :movie_picture)
+      params.require(:movie).permit(:title, :synopsis, :director, :release_date, :image)
     end
 
     def comment_params
