@@ -18,8 +18,7 @@ class Movie < ApplicationRecord
   has_many :movie_categories
   has_many :categories, through: :movie_categories
 
-  has_many :movie_ratings
-  has_many :ratings, through: :movie_ratings
+  has_many :ratings
 
   has_many :movie_musics
   has_many :musics, through: :movie_musics
