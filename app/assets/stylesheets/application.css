@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- 
+
  * {
      font-family: 'Fira Code';
      text-decoration: none !important;
@@ -466,12 +466,6 @@
      word-wrap: break-word;
      justify-content: flex-start;
      font-size: 1vw;
- }
- 
- footer {
-     clear: both;
-     position: relative;
-     margin-top: 100px;
  }
 
  .radius_form {
