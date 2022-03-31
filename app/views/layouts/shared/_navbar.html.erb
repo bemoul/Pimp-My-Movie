@@ -1,23 +1,24 @@
+
+
 <div class="div-links">
     <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Pimp my Movie</a>
+          <a class="navbar-brand"<%= link_to 'Pimp my Movie', root_path %></a>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+
 
           <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav me-auto">
+
+            </div>
 
 
+            <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link active" <%= link_to 'Home', root_path %></a>
                   <span class="visually-hidden">(current)</span>
                 </a>
               </li>
-
 
               <li class="nav-item">
                 <a class="nav-link" <%= link_to 'Movies', movies_path %></a>
@@ -25,39 +26,40 @@
 
 
 
-
+              
 
               <% if current_user %>
-
+              
               <li class="nav-item">
                 <a class="nav-link" <%= link_to "Log out", destroy_user_session_path, method: "delete" %></a>
               </li>
 
-              <li class="nav-item ">
+              <li class="nav-item">
                 <a class="nav-link" <%= link_to "Profile", profiles_path %>
               </li>
-
-
 
               <% else %>
               <li class="nav-item">
                 <a class="nav-link" <%= link_to 'Log in', new_user_session_path %></a>
               </li>
-
+              
               <li class="nav-item">
                 <a class="nav-link" <%= link_to 'Subscribe', new_user_registration_path%></a>
               </li>
 
 
-
               <% end %>
-              <div class="col-lg-4 mx-5 ">
+
+              <div class="col-lg-4 mx-5">
                 <div class="input-group ">
                   <input type="text" class="form-control" placeholder="Search for...">
                   <span class="input-group-btn px-3">
                     <button class="btn " type="button">Search</button>
                   </span>
+                  </div>
                 </div>
+
+
 
             </ul>
           </div>

@@ -1,13 +1,33 @@
+<div class="container">
 
     <div class="card-body-profile">
       <div class="tab-content">
-        <div class="tab-pane fade show active" id="home">
-          <h5 class="card-title">The list of movies that you created</h5>
-          <% @movies.each do |movie| %>
-            <p class="card-text-profile"><%= movie.title %></p>
-          <% end %>
-          <a href="#" class="btn btn-primary">Do you want to edit your profile ?</a>
+        <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="..." class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title pb-5">Profil :</h5>
+            <p> Email : <%= current_user.email %> </p>
+            <p> Username : <%= current_user.email %> </p>
+            <h5 class="card-title">The list of movies that you created</h5>
+            <% @movies.each do |movie| %>
+              <p class="card-text-profile"><%= movie.title %></p>
+            <% end %>
+            <div class="pt-5">
+
+
+        <%= link_to "Edit your profile", edit_user_registration_path %>
+                </div>
+
+          </div>
         </div>
       </div>
     </div>
 
+      </div>
+    </div>
+
+  </div>
