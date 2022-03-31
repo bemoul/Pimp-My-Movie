@@ -53,11 +53,19 @@
 		        <% end %>
           </div>
 
+                  <div class="container">
+                    <%= form_tag (movie_ratings_path(@movie.id)) do %>
+                        <div class="form-group">
+                            <%= text_area_tag 'rate', nil, class: "form-control area" %>
+                        </div>
+                        <div class="submit-comment py-2">
+                            <%= submit_tag "Submits", class: 'btn btn1' %>
+                        </div>
+                    <%end%>
+
           <div class="list-actors">
             <h5>Ratings :</h5>
-                <% @ratings.each do |rating| %>
-                    <h6><%= rating.rate %></h6>
-                <% end %>
+              <%= @rating_average %>
           </div>
 
             </div>
@@ -91,33 +99,4 @@
             </div>
         </div>
     </div>
-</div>
-
-			</div>
-			<div class="section-comments">
-				<h3 class="share">Give your opinion on the movie =></h3>
-
-				<div class="container">
-					<%= form_tag (movie_comments_path(@movie.id)) do %>
-						<div class="form-group">
-							<%= text_area_tag 'description', nil, class: "form-control area" %>
-						</div>
-						<div class="submit-comment">
-							<%= submit_tag "Submit!", class: 'btn btn-primary' %>
-						</div>
-					<%end%>
-
-					<div class="list-comments">
-						<h5>Comments of Movie: </h5>
-						<% @comments.each do |comment| %>
-							<h5><%= comment.description %></h5>
-						<% end %>
-					</div>
-
-				</div>
-			</div>		
-		</div>
-	</div>
-
-</div>
 </div>
