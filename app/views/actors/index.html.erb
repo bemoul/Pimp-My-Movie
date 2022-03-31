@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+
+
+    <% @movies.each do |movie| %>
+    <%= movie.title %>
+    </br>
+      <% end %>
+    <% @actors.each do |actor| %>
+    <%= actor.full_name %>
+        </br>
+      <% end %>
+      </br>
+    </div>
+  </body>
+</html>

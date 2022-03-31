@@ -17,7 +17,7 @@
             <%= link_to movie do %>
                 <%= image_tag(movie.movie_picture, style:'width: 200px') if movie.movie_picture.attached? %>
               <% end %>
-            
+
                 <div class="card-body">
                   <p class="card-title lead"><%= movie.title %></p>
                   <small><%= movie.director %><br></small>
@@ -28,4 +28,3 @@
             </div>
           <% end %>
   </div>
-

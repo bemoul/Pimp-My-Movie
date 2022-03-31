@@ -3,12 +3,15 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root 'movies#home'
   resource 'profiles', only: [:show, :edit], :path => "my-account"
-  
+
   resources 'movies' do
     resources :comments
     resources :ratings
   end
-  
+
+  resources 'actors' do
+  end 
+
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
