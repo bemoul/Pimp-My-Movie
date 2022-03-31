@@ -51,6 +51,9 @@ class MoviesController < ApplicationController
     @movie.image = hash.get_image_by_title(@movie.title)
     @movie.synopsis = hash.get_synopsis_by_title(@movie.title)
     @movie.director = hash.get_director_by_title(@movie.title)
+    @date_from_api = hash.get_released_by_title(@movie.title)
+    array_dates = @date_from_api.split(" ")
+    @movie.release_date = array_dates.last.to_i
     @actors_name = hash.get_actor_by_title(@movie.title)
     @actors_name_array = @actors_name.split(",")
     @actors_name_array.each do |value|

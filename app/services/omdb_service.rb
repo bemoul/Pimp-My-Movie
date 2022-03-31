@@ -36,4 +36,11 @@ class OmdbService
     parsed_response["Poster"]
   end
 
+  def get_released_by_title(title)
+    response = HTTP.get("http://www.omdbapi.com/?apikey=#{ENV["OMDB_API_KEY"]
+    }&t=#{title}").to_s
+    parsed_response = JSON.parse(response)
+    parsed_response["Released"]
+  end
+
 end
