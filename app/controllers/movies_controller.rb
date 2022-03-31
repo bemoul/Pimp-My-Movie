@@ -10,6 +10,12 @@ class MoviesController < ApplicationController
   # GET /movies or /movies.json
   def index
     @movies = Movie.all
+    @search = params[:search]
+        if @search
+            @movie = Movie.find_or_create_from_api(params[:search]) 
+        else 
+            @movies = Movie.page(params[:page])
+        end 
   end
 
   # GET /movies/1 or /movies/1.json
@@ -36,32 +42,7 @@ class MoviesController < ApplicationController
 
   # POST /movies or /movies.json
   def create
-    @movie = current_user.movies.build(movie_params)
-    hash = OmdbService.new()
-    escaped_title = CGI.escape(@movie.title)
-    @movie.image = hash.get_image_by_title(@movie.title)
-    @movie.synopsis = hash.get_synopsis_by_title(@movie.title)
-    @movie.director = hash.get_director_by_title(@movie.title)
-    @actors_name = hash.get_actor_by_title(@movie.title)
-    @actors_name_array = @actors_name.split(",")
-    @actors_name_array.each do |value|
-    if Actor.exists?(:full_name => value) == false
-      @actor = Actor.create(full_name: value)
-      @movie_actor = MovieActor.create(movie: @movie, actor: @actor)
-    else
-      @actor = Actor.find_by(full_name: value)
-      @movie_actor = MovieActor.create(movie: @movie, actor: @actor)
-    end
-    @rating_total = 0
-    @total = 1
-    @ratings = @movie.ratings
-    @ratings.each do |rating|
-      @rating_total = @rating_total + rating.rate
-      @total = @total +1
-    end
-    @rating_average = @rating_total / @total
-
-  end
+    @movie = Movie.find_or_create_from_api(movie_params)
 
     respond_to do |format|
       if @movie.save
