@@ -52,6 +52,15 @@ class MoviesController < ApplicationController
       @actor = Actor.find_by(full_name: value)
       @movie_actor = MovieActor.create(movie: @movie, actor: @actor)
     end
+    @rating_total = 0
+    @total = 1
+    @ratings = @movie.ratings
+    @ratings.each do |rating|
+      @rating_total = @rating_total + rating.rate
+      @total = @total +1
+    end
+    @rating_average = @rating_total / @total
+
   end
 
     respond_to do |format|
