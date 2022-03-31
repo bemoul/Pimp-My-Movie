@@ -38,7 +38,8 @@ class MoviesController < ApplicationController
   def create
     @movie = current_user.movies.build(movie_params)
     hash = OmdbService.new()
-    #escaped_title = CGI.escape(@movie.title)
+    escaped_title = CGI.escape(@movie.title)
+    @movie.image = hash.get_image_by_title(@movie.title)
     @movie.synopsis = hash.get_synopsis_by_title(@movie.title)
     @movie.director = hash.get_director_by_title(@movie.title)
     @actors_name = hash.get_actor_by_title(@movie.title)
@@ -95,7 +96,7 @@ class MoviesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def movie_params
-      params.require(:movie).permit(:title, :synopsis, :director, :release_date, :movie_picture)
+      params.require(:movie).permit(:title, :synopsis, :director, :release_date, :image)
     end
 
     def comment_params
