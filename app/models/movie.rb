@@ -1,7 +1,8 @@
 class Movie < ApplicationRecord
   
   has_one_attached :movie_picture
-  validates :title, :synopsis, :director, :release_date, presence: true
+  validates :title, uniqueness: { case_sensitive: false }
+  validates :synopsis, :director, :release_date, presence: true
   validates :release_date, numericality: { greater_than: 1888, less_than:  Date.current.year+1 }
   validates :title, uniqueness: true
   
