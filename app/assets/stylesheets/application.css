@@ -467,7 +467,14 @@
      justify-content: flex-start;
      font-size: 1vw;
  }
+ 
+ footer {
+     clear: both;
+     position: relative;
+     margin-top: 100px;
+ }
 
  .radius_form {
    border-radius: 20px;
+
  }
