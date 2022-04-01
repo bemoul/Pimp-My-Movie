@@ -22,12 +22,12 @@
 			</div> -->
 			<!-- end details -->
 
-<div class="container1 px-5 py-5">
+<div class="container px-5 py-5">
 <div class="card mb-3 px-5" style="max-width: 80%;">
 <div class="list-actors">
 	</div>
 	<div class="row no-gutters">
-	  <div class="col-md-4">
+	  <div class="col-md-4 my-1">
 		  <%= image_tag(@movie.image) %>
                             <% flash.each do |name, msg| %>
                     <div class='alert alert-<%= name %>'>
@@ -61,7 +61,7 @@
               <%= @total %>
       </div>
 	</div>
-		<div class="col-md-8">
+		<div class="col-md-8 px-4">
 				<h4 class="card-title"><%= @movie.title %></h4>
 			<div class="card-body">
 				<p class="card-text"><h6>Director: <%= @movie.director%></h6></h6>
@@ -69,6 +69,9 @@
 				<p class="card-text"><h3>Synopsis: <%= @movie.synopsis%></h3></h3>
 				<p class="edit-movie"> <%= link_to 'Back', movies_path %> ||
 				<%= link_to 'Edit', edit_movie_path(@movie) %></p>
+				<%= link_to 'Destroy', movie_path(@movie),
+					 method: :delete,
+					 data: { confirm: 'Are You sure?' } %>
 
           <div class="list-musics">
 						<h5>Original Soundtrack :</h5>
