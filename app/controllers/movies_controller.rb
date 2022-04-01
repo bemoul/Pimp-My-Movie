@@ -45,12 +45,17 @@ class MoviesController < ApplicationController
 
   # POST /movies or /movies.json
   def create
+    @actors_name = ""
     @movie = current_user.movies.build(movie_params)
     hash = OmdbService.new()
     escaped_title = CGI.escape(@movie.title)
+    if hash.exist?(@movie.title) == "False"
+      flash[:alert] = "Movie not found."
+    else
     @movie.image = hash.get_image_by_title(@movie.title)
     @movie.synopsis = hash.get_synopsis_by_title(@movie.title)
     @movie.director = hash.get_director_by_title(@movie.title)
+    @movie.release_date = hash.get_year_by_title(@movie.title)
     @actors_name = hash.get_actor_by_title(@movie.title)
     @actors_name_array = @actors_name.split(",")
     @actors_name_array.each do |value|
@@ -60,6 +65,7 @@ class MoviesController < ApplicationController
     else
       @actor = Actor.find_by(full_name: value)
       @movie_actor = MovieActor.create(movie: @movie, actor: @actor)
+    end
     end
   end
 
