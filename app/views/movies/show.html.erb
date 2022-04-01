@@ -14,7 +14,7 @@
           </div>
         <% end %>
 
-        <%= form_tag(movie_ratings_path(@movie.id))do %>
+        <%= form_tag(movie_ratings_path(@movie.id)) do %>
           <div class="form-group">
             <p>Rate the movie ! :</p>
             <%= radio_button_tag(:rate, "1") %>
@@ -47,25 +47,25 @@
           <p class="card-text"><h6>Director: <%= @movie.director %></h6>
           <p class="card-text">
           <h6>Year Of Release: <%= @movie.release_date %></p></h6>
-            <p class="card-text">
-            <h3>Synopsis: <%= @movie.synopsis %></h3>
-            <p class="edit-movie"> <%= link_to 'Back', movies_path %> ||
-              <%= link_to 'Destroy', movie_path(@movie), method: :delete, data: { confirm: 'Are You sure?' } %>
+          <p class="card-text">
+          <h3>Synopsis: <%= @movie.synopsis %></h3>
+          <p class="edit-movie"> <%= link_to 'Back', movies_path %> ||
+            <%= link_to 'Destroy', movie_path(@movie), method: :delete, data: { confirm: 'Are You sure?' } %>
 
-            <div class="list-musics">
-              <h5>Original Soundtrack :</h5>
-              <% @musics.each do |music| %>
-                <h6><%= music.band %></h6>
-                <h6><%= music.title %></h6>
-              <% end %>
-            </div>
+          <div class="list-musics">
+            <h5>Original Soundtrack :</h5>
+            <% @musics.each do |music| %>
+              <h6><%= music.band %></h6>
+              <h6><%= music.title %></h6>
+            <% end %>
+          </div>
 
-            <div class="list-actors">
-              <h5> Actors of Movie:</h5>
-              <% @actors.each do |actor| %>
-                <h6><%= actor.full_name %></h6>
-              <% end %>
-            </div>
+          <div class="list-actors">
+            <h5> Actors of Movie:</h5>
+            <% @actors.each do |actor| %>
+              <h6><%= actor.full_name %></h6>
+            <% end %>
+          </div>
 
         </div>
 
@@ -79,7 +79,7 @@
 
           <h3 class="share">Tell us what you think about this movie :</h3>
           <div class="container">
-            <%= form_tag(movie_comments_path(@movie.id))do %>
+            <%= form_tag(movie_comments_path(@movie.id)) do %>
               <div class="form-group">
                 <%= text_area_tag 'description', nil, class: "form-control area" %>
               </div>
