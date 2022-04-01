@@ -1,15 +1,14 @@
-# frozen_string_literal: true
-
 class ProfilesController < ApplicationController
   before_action :set_user, only: %i[update edit show]
 
-  def show
+  def index
     @user = current_user
     @user_email = current_user.email
     @movies = Movie.all.where(user: @user)
   end
 
-  def edit; end
+  def edit
+  end
 
   private
 
