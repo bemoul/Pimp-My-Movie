@@ -1,6 +1,7 @@
 class Movie < ApplicationRecord
   has_one_attached :movie_picture
   validates :title, uniqueness: true
+  validates :title, :synopsis, :release_date, presence: true
 
   belongs_to :user
   has_many :comments, dependent: :destroy
