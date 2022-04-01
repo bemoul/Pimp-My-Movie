@@ -49,8 +49,10 @@
           <div class="list-actors">
             <h5> Actors of Movie:</h5>
 		        <% @actors.each do |actor| %>
-			        <h6><%= actor.full_name %></h6>
+			        <h6><%= actor.full_name %> <%= link_to 'See more actors', actors_path %> </h6>
 		        <% end %>
+					<h5 class= "px-1"> </h5>
+
           </div>
 
                   <div class="container">

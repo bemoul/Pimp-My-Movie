@@ -1,22 +1,24 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <div class="container">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Acteurs</th>
 
 
-    <% @movies.each do |movie| %>
-    <%= movie.title %>
-    </br>
-      <% end %>
-    <% @actors.each do |actor| %>
-    <%= actor.full_name %>
-        </br>
-      <% end %>
-      </br>
-    </div>
-  </body>
-</html>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+
+    </tr>
+     <% @actors.each do |actor| %>
+    <tr>
+        <%= link_to actor do %>
+
+        <td>     <%= actor.full_name %> </td>
+            <% end %>
+          <% end %>
+
+  </tbody>
+</table>
