@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # FactoryBot.define do
 #     factory :user do
 #         title: { Faker::Movie.title }
@@ -9,7 +10,6 @@
 #     end
 # end
 
-
 # # # rails generate factory_bot:model TonModel
 # # #  rails generate factory_bot:model Actor
 
@@ -20,8 +20,6 @@
 # # # Run all spec files in a single directory (recursively)
 # # $ bundle exec rspec spec/models
 # #---->   rspec spec/factories
-
-
 
 # # # Run a single spec file
 # # $ bundle exec rspec spec/controllers/accounts_controller_spec.rb

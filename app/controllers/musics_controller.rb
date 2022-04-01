@@ -1,5 +1,6 @@
-class MusicsController < ApplicationController
+# frozen_string_literal: true
 
+class MusicsController < ApplicationController
   def new
     @movie = Movie.find(params[:movie_id])
     @music = Music.new
@@ -8,7 +9,7 @@ class MusicsController < ApplicationController
   def create
     @movie = Movie.find(params[:movie_id])
     @music = Music.new(
-      title: params[:title], 
+      title: params[:title],
       user_id: current_user.id,
       movie_id: params[:movie_id]
     )
@@ -18,5 +19,4 @@ class MusicsController < ApplicationController
       render @movie
     end
   end
-
 end

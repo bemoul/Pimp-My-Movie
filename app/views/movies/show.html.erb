@@ -1,27 +1,3 @@
-			<p id="notice"><%= notice %></p>
-
-		 <!-- <div class="rating">
-
-				<input type="radio" name="rating" id="r1">
-				<label for="r1"></label>
-
-				<input type="radio" name="rating" id="r2">
-				<label for="r2"></label>
-
-				<input type="radio" name="rating" id="r3">
-				<label for="r3"></label>
-
-				<input type="radio" name="rating" id="r4">
-				<label for="r4"></label>
-
-				<input type="radio" name="rating" id="r5">
-				<label for="r5"></label>
-
-			</div>
-
-			</div> -->
-			<!-- end details -->
-
 <div class="container px-5 py-5">
 <div class="card mb-3 px-5" style="max-width: 80%;">
 <div class="list-actors">
@@ -88,41 +64,46 @@
 					<h5 class= "px-1"> </h5>
 
           </div>
+        </div>
 
+        <div class="section-comments">
+
+          <% flash.each do |name, msg| %>
+            <div class='alert alert-<%= name %>'>
+              <%= msg %>
             </div>
-            <div class="section-comments">
-            <% flash.each do |name, msg| %>
-              <div class='alert alert-<%= name %>'>
-                <%= msg %>
+          <% end %>
+
+          <h3 class="share">Tell us what you think about this movie :</h3>
+          <div class="container">
+            <%= form_tag(movie_comments_path(@movie.id))do %>
+              <div class="form-group">
+                <%= text_area_tag 'description', nil, class: "form-control area" %>
+              </div>
+              <div class="submit-comment py-2">
+                <%= submit_tag "Submit", class: 'btn btn1' %>
               </div>
             <% end %>
-                <h3 class="share">Tell us what you think about this movie :</h3>
-                <div class="container">
-                    <%= form_tag (movie_comments_path(@movie.id)) do %>
-                        <div class="form-group">
-                            <%= text_area_tag 'description', nil, class: "form-control area" %>
-                        </div>
-                        <div class="submit-comment py-2">
-                            <%= submit_tag "Submit", class: 'btn btn1' %>
-                        </div>
-                    <%end%>
-                    <h5>Comments from users: </h5>
+            <h5>Comments from users: </h5>
 
 
-                    <div class="list-comments">
+            <div class="list-comments">
 
-                        <% @comments.each do |comment| %>
-                        <div class="list-comments py-3">
-                            <h5 class ="px-2 py-1"><%= comment.description %></h5>
-                            </div>
-                        <% end %>
-                    </div>
-
-
-
+              <% @comments.each do |comment| %>
+                <div class="list-comments py-3">
+                  <h5 class="px-2 py-1"><%= comment.description %></h5>
                 </div>
+              <% end %>
             </div>
+
+
+          </div>
         </div>
+
+      </div>
     </div>
+
 </div>
+</div>
+  </div>
 </div>

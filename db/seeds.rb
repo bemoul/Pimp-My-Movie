@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -16,9 +18,7 @@ Music.destroy_all
 Rating.destroy_all
 User.destroy_all
 
-
-
-3.times do |i|
+3.times do |_i|
   Music.create(
     title: Faker::Music.instrument,
     band: Faker::Music.band,
@@ -27,15 +27,13 @@ User.destroy_all
 end
 
 3.times do |i|
+  user = User.create(
+    email: "user-mail#{i}@yopmail.com",
+    password: "password#{i}",
+    password_confirmation: "password#{i}"
+  )
 
-    user = User.create(
-        email: 'user-mail' + "#{i}" + '@yopmail.com',
-        password: 'password'+"#{i}",
-        password_confirmation: 'password'+"#{i}"
-    )
-
-
-    movie= Movie.create(
+  movie = Movie.create(
     title: Faker::Movie.title,
     synopsis: 'Lorem ipsum ...',
     director: Faker::Games::SuperMario.character,
@@ -55,25 +53,26 @@ end
   comment.movie
   comment.user
   comment.save
-
-
 end
 
-3.times do |i|
+3.times do |_i|
   Category.create(
     style: Faker::Book.genre
   )
 end
 
-3.times do |i|
+3.times do |_i|
   Actor.create(
     full_name: Faker::TvShows::Friends.character
   )
 end
-3.times do |i|
-    Rating.create(
-      user_id: User.all.sample.id,
-      movie_id: Movie.all.sample.id
-    )
-  end
-  AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+3.times do |_i|
+  Rating.create(
+    user_id: User.all.sample.id,
+    movie_id: Movie.all.sample.id
+  )
+end
+if Rails.env.development?
+  AdminUser.create!(email: 'admin@example.com', password: 'password',
+                    password_confirmation: 'password')
+end

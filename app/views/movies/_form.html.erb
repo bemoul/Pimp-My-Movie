@@ -4,28 +4,27 @@
       <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
 
       <ul>
-      <% movie.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% movie.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
 
   <div class="movie_form">
-      <div class="col-6">
+    <div class="col-6">
+      <div class="field py-2">
+        <%= form.label :title %>*
         <div class="field py-2">
-          <%= form.label :title %>
-          <div class="field py-2">
           <%= form.text_field :title %>
         </div>
-        </div>
-
-
-        <div class="actions py-4">
-          <%= form.submit %>
-        </div>
-
       </div>
-        <% end %>
+
+      <div class="actions py-4">
+        <%= form.submit %>
+      </div>
+
     </div>
+<% end %>
+</div>

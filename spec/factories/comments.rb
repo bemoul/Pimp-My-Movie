@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :comment do
     # belongs to user
-    description  {   'Lorem ipsum ...' }
-    
+    description { 'Lorem ipsum ...' }
   end
 end
 # do
@@ -13,10 +14,9 @@ end
 #   end
 # end
 
-
 # factory d'un Book, qui belongs_to user.
 # FactoryBot.define do
 #   factory :book do
-#     user { FactoryBot.create(:user) }  
+#     user { FactoryBot.create(:user) }
 #   end
 # end

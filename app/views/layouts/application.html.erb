@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PimpMyMovie</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-         <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Hubballi&family=Montserrat:wght@100&family=Poppins:wght@400;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<head>
+  <title>PimpMyMovie</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Hubballi&family=Montserrat:wght@100&family=Poppins:wght@400;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 
-    <script src="https://js.stripe.com/v3/"></script>
+  <script src="https://js.stripe.com/v3/"></script>
 
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-  <%= render 'layouts/shared/navbar' %>
+<%= render 'layouts/shared/navbar' %>
 
-    <%= yield %>
-  <%= render 'layouts/shared/footer' %> 
-  </body>
+<%= yield %>
+<%= render 'layouts/shared/footer' %>
+</body>
 
-  
-  
 
 </html>
