@@ -11,7 +11,6 @@ class MoviesController < ApplicationController
     #@movies = Movie.all
     @movie = Movie.where("title LIKE ?", "%" + params[:q] +"%")
     puts "*************"
-    @title = 
     render 'show'
   end
 
