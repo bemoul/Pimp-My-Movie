@@ -1,0 +1,11 @@
+ <div class="container px-5 py-5">
+ 
+ 
+ <% flash.each do |name, msg| %>
+          <div class='alert alert-<%= name %>'>
+            <%= msg %>
+          </div>
+        <% end %>
+
+  <a href="https://www.imdb.com/" target="_blank" rel="noopener noreferrer"> please check your movie on this website </a>
+</div>

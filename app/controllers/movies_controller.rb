@@ -46,38 +46,53 @@ class MoviesController < ApplicationController
 
   # POST /movies or /movies.json
   def create
-    @actors_name = ""
-    @movie = current_user.movies.build(movie_params)
-    hash = OmdbService.new
-    escaped_title = CGI.escape(@movie.title)
+        @found = true
+        @actors_name = ""
+        @movie = current_user.movies.build(movie_params)
+        hash = OmdbService.new
+        escaped_title = CGI.escape(@movie.title)
     if hash.exist?(@movie.title) == "False"
-      flash[:alert] = "Movie not found."
+          flash[:alert] = "Movie not found. please check the title is correclty writed"
+          @found = false
+     
+        
     else
-    @movie.image = hash.get_image_by_title(@movie.title)
-    @movie.synopsis = hash.get_synopsis_by_title(@movie.title)
-    @movie.director = hash.get_director_by_title(@movie.title)
-    @movie.release_date = hash.get_year_by_title(@movie.title)
-    @actors_name = hash.get_actor_by_title(@movie.title)
-    @actors_name_array = @actors_name.split(',')
-    @actors_name_array.each do |value|
-      @actor = if Actor.exists?(full_name: value) == false
-                 Actor.create(full_name: value)
-               else
-                 Actor.find_by(full_name: value)
-               end
-       @movie_actor = MovieActor.create(movie: @movie, actor: @actor)
-      end
-  end
+          # binding.pry
+        @movie.image = hash.get_image_by_title(@movie.title)
+        @movie.synopsis = hash.get_synopsis_by_title(@movie.title)
+        @movie.director = hash.get_director_by_title(@movie.title)
+        @movie.release_date = hash.get_year_by_title(@movie.title)
+        @movie.save
+        @actors_name = hash.get_actor_by_title(@movie.title)
+        @actors_name_array = @actors_name.split(',')
+        @actors_name_array.each do |value|
+            @actor = if Actor.exists?(full_name: value) == false
+                      Actor.create(full_name: value)
+                    else
+                      Actor.find_by(full_name: value)
+                    end
+            @movie_actor = MovieActor.create(movie: @movie, actor: @actor)
+            end
 
-    respond_to do |format|
-      if @movie.save
-        format.html { redirect_to movie_url(@movie), notice: 'Movie was successfully created.' }
-        format.json { render :show, status: :created, location: @movie }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @movie.errors, status: :unprocessable_entity }
+
+      respond_to do |format|
+            
+          if @movie.save
+            format.html { redirect_to movie_url(@movie), notice: 'Movie was successfully created.' }
+            format.json { render :show, status: :created, location: @movie }
+    
+          else
+            # 
+            format.html { render  "movies/home", notice: 'Error in the title of the movie, please check again'}
+            format.json { render json: @movie.errors, status: :unprocessable_entity }
+
+          end
+    
+    
+        end   
       end
-    end
+
+
   end
 
   # PATCH/PUT /movies/1 or /movies/1.json
