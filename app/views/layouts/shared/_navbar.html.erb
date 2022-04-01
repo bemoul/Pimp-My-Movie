@@ -1,60 +1,55 @@
-
-
 <div class="div-links">
-    <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-          <a class="navbar-brand"<%= link_to 'Pimp my Movie', root_path %></a>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand"<%= link_to 'Pimp my Movie', root_path %>></a>
 
 
+      <div class="collapse navbar-collapse" id="navbarColor01">
 
-          <div class="collapse navbar-collapse" id="navbarColor01">
-
-            </div>
-
-
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" <%= link_to 'Home', root_path %></a>
-                  <span class="visually-hidden">(current)</span>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" <%= link_to 'Movies', movies_path %></a>
-              </li>
+      </div>
 
 
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" <%= link_to 'Home', root_path %></a>
+          <span class="visually-hidden">(current)</span>
+        </li>
 
-              
-
-              <% if current_user %>
-              
-              <li class="nav-item">
-                <a class="nav-link" <%= link_to "Log out", destroy_user_session_path, method: "delete" %></a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" <%= link_to "Profile", profiles_path %>
-              </li>
-
-              <% else %>
-              <li class="nav-item">
-                <a class="nav-link" <%= link_to 'Log in', new_user_session_path %></a>
-              </li>
-              
-              <li class="nav-item">
-                <a class="nav-link" <%= link_to 'Subscribe', new_user_registration_path%></a>
-              </li>
-
-
-              <% end %>
+        <li class="nav-item">
+          <a class="nav-link" <%= link_to 'Movies', movies_path %></a>
+        </li>
 
 
 
 
-            </ul>
-          </div>
-        </div>
-      </nav>
+
+        <% if current_user %>
+
+          <li class="nav-item">
+            <a class="nav-link" <%= link_to "Log out", destroy_user_session_path, method: "delete" %></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" <%= link_to "Profile", profiles_path %>
+          </li>
+
+        <% else %>
+          <li class="nav-item">
+            <a class="nav-link" <%= link_to 'Log in', new_user_session_path %></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" <%= link_to 'Subscribe', new_user_registration_path %></a>
+          </li>
+
+
+        <% end %>
+
+
+      </ul>
     </div>
+  </nav>
+</div>
+
+

@@ -4,59 +4,59 @@
       <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
 
       <ul>
-      <% movie.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% movie.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
 
   <div class="movie_form">
-      <div class="col-6">
+    <div class="col-6">
+      <div class="field py-2">
+        <%= form.label :title %>*
         <div class="field py-2">
-          <%= form.label :title %>
-          <div class="field py-2">
           <%= form.text_field :title %>
         </div>
-        </div>
+      </div>
 
+      <div class="field py-2">
+        <%= form.label :synopsis %>
         <div class="field py-2">
-          <%= form.label :synopsis %>
-          <div class="field py-2">
           <%= form.text_area :synopsis %>
         </div>
-        </div>
+      </div>
 
-        <div class="field py-2 ">
-          <%= form.label :director %>
-          <div class="field py-2">
+      <div class="field py-2 ">
+        <%= form.label :director %>
+        <div class="field py-2">
           <%= form.text_field :director %>
         </div>
-        </div>
+      </div>
 
+      <div class="field py-2">
+        <%= form.label :release_date %>
         <div class="field py-2">
-          <%= form.label :release_date %>
-          <div class="field py-2">
           <%= form.number_field :release_date %>
         </div>
-        </div>
+      </div>
 
-        <div class="field">
-          <%= form.label :movie_picture %>
+      <div class="field">
+        <%= form.label :movie_picture %>
 
-          <div class="field1">
+        <div class="field1">
 
           <%= form.file_field :movie_picture %>
 
         </div>
-        </div>
-
-
-        <div class="actions py-4">
-          <%= form.submit %>
-        </div>
-
       </div>
-        <% end %>
+
+
+      <div class="actions py-4">
+        <%= form.submit %>
+      </div>
+
     </div>
+<% end %>
+</div>
