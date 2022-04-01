@@ -20,24 +20,15 @@ Le site est en live ici 👉 [Pimp My Movie](https://pimpmymovie.herokuapp.com)
 
 1. Bundle install
 
-```bash
-if good, follow-up,
-  else
-retry yourself
-```
-
 2. rails:db:migrate
 
-```bash
-if good, follow-up
-  else
-retry yourself
-```
-3. Run the app
+3. Run the app localy: rails s
 
-```bash
-wp m8 <3
-```
+## 🛠️ API
+thx to our friend from OMDB-API we can get such a lot of informations on movies. please get the api key from this website and pur the key in your env files:
+OMDB_API_KEY="yourkey"
+
+https://www.omdbapi.com/
 
 🌟 You are all set!
 ## Crédit 🔗
