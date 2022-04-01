@@ -1,72 +1,69 @@
-<p id="notice"><%= notice %></p>
+<div class="container px-5 py-5">
+<div class="card mb-3 px-5" style="max-width: 80%;">
+<div class="list-actors">
+	</div>
+	<div class="row no-gutters">
+	  <div class="col-md-4 my-1">
+		  <%= image_tag(@movie.image) %>
+                            <% flash.each do |name, msg| %>
+                    <div class='alert alert-<%= name %>'>
+                      <%= msg %>
+                    </div>
+                  <% end %>
 
-<div class="container1 px-5 py-5">
-  <div class="card mb-3 px-5" style="max-width: 80%;">
-    <div class="list-actors">
-    </div>
+                    <%= form_tag (movie_ratings_path(@movie.id)) do %>
+                        <div class="form-group"></br>
+                        <p>Rate the movie ! :</p></br>
+                            <%= radio_button_tag(:rate, "1") %>
+                            <%= label_tag(:rate, "1") %>
+                            <%= radio_button_tag(:rate, "2") %>
+                            <%= label_tag(:rate, "2") %>
+                            <%= radio_button_tag(:rate, "3") %>
+                            <%= label_tag(:rate, "3") %>
+                            <%= radio_button_tag(:rate, "4") %>
+                            <%= label_tag(:rate, "4") %>
+                            <%= radio_button_tag(:rate, "5") %>
+                            <%= label_tag(:rate, "5") %>
+                            <div class="submit-rate">
+                            <%= submit_tag "OK", class: 'btn btn1' %>
+                            </div>
+                        </div>
 
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <%= image_tag(@movie.image) %>
-        <% flash.each do |name, msg| %>
-          <div class='alert alert-<%= name %>'>
-            <%= msg %>
-          </div>
-        <% end %>
-
-        <%= form_tag(movie_ratings_path(@movie.id))do %>
-          <div class="form-group">
-            <p>Rate the movie ! :</p>
-            <%= radio_button_tag(:rate, "1") %>
-            <%= label_tag(:rate, "1") %>
-            <%= radio_button_tag(:rate, "2") %>
-            <%= label_tag(:rate, "2") %>
-            <%= radio_button_tag(:rate, "3") %>
-            <%= label_tag(:rate, "3") %>
-            <%= radio_button_tag(:rate, "4") %>
-            <%= label_tag(:rate, "4") %>
-            <%= radio_button_tag(:rate, "5") %>
-            <%= label_tag(:rate, "5") %>
-            <div class="submit-rate">
-              <%= submit_tag "OK", class: 'btn btn1' %>
-            </div>
-          </div>
-        <% end %>
-
-        <div class="list-rating">
-          <h5>Rating :</h5>
-          <%= @rating_average %>
-          <h5> Number of rates</h5>
-          <%= @total %>
-        </div>
+                    <%end%>
+                              <div class="list-rating">
+              <h5>Rating :</h5>
+              <%= @rating_average %>
+              <h5> Number of rates</h5>
+              <%= @total %>
       </div>
+	</div>
+		<div class="col-md-8 px-4">
+				<h4 class="card-title"><%= @movie.title %></h4>
+			<div class="card-body">
+				<p class="card-text"><h6>Director: <%= @movie.director%></h6></h6>
+				<p class="card-text"><h6>Year Of Release: <%= @movie.release_date%></p>
+				<p class="card-text"><h3>Synopsis: <%= @movie.synopsis%></h3></h3>
+				<p class="edit-movie"> <%= link_to 'Back', movies_path %> ||
+				<%= link_to 'Edit', edit_movie_path(@movie) %></p>
+				<%= link_to 'Destroy', movie_path(@movie),
+					 method: :delete,
+					 data: { confirm: 'Are You sure?' } %>
 
-      <div class="col-md-8">
-        <h4 class="card-title"><%= @movie.title %></h4>
-        <div class="card-body">
-          <p class="card-text"><h6>Director: <%= @movie.director %></h6>
-          <p class="card-text">
-          <h6>Year Of Release: <%= @movie.release_date %></p></h6>
-            <p class="card-text">
-            <h3>Synopsis: <%= @movie.synopsis %></h3>
-            <p class="edit-movie"> <%= link_to 'Back', movies_path %> ||
-              <%= link_to 'Edit', edit_movie_path(@movie) %></p>
+          <div class="list-musics">
+						<h5>Original Soundtrack :</h5>
+						<% @musics.each do |music| %>
+							<h6><%= music.band %></h6>
+							<h6><%= music.title %></h6>
+						<% end %>
+					</div>
+          <div class="list-actors">
+            <h5> Actors of Movie:</h5>
+		        <% @actors.each do |actor| %>
+			        <h6><%= actor.full_name %> </h6>
+		        <% end %>
+					<h5 class= "px-1"> </h5>
 
-            <div class="list-musics">
-              <h5>Original Soundtrack :</h5>
-              <% @musics.each do |music| %>
-                <h6><%= music.band %></h6>
-                <h6><%= music.title %></h6>
-              <% end %>
-            </div>
-
-            <div class="list-actors">
-              <h5> Actors of Movie:</h5>
-              <% @actors.each do |actor| %>
-                <h6><%= actor.full_name %></h6>
-              <% end %>
-            </div>
-
+          </div>
         </div>
 
         <div class="section-comments">
@@ -105,5 +102,8 @@
 
       </div>
     </div>
+
+</div>
+</div>
   </div>
 </div>

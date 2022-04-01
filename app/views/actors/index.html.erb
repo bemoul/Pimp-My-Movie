@@ -1,0 +1,24 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Acteurs</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+
+    </tr>
+     <% @actors.each do |actor| %>
+    <tr>
+        <%= link_to actor do %>
+
+        <td>     <%= actor.full_name %> </td>
+            <% end %>
+          <% end %>
+
+  </tbody>
+</table>
