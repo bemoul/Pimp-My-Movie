@@ -67,7 +67,6 @@ class MoviesController < ApplicationController
                end
        @movie_actor = MovieActor.create(movie: @movie, actor: @actor)
       end
-    end
   end
 
     respond_to do |format|
