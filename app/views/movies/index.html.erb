@@ -6,20 +6,20 @@
       <i class="fa-solid fa-camera-movie"></i></h3>
   </div>
 </div>
-    <div class="container d-flex flex-wrap px-5 py-1 ">
-     <% @movies.each do |movie| %>
-       <div class="card align-item-center px-5" style="width: 18rem;">
-        <%= link_to movie do %>
-        <%= image_tag(movie.image, style:'width:200px') %>
-       <% end %>
+<div class="container d-flex flex-wrap px-5 py-1 ">
+  <% @movies.each do |movie| %>
+    <div class="card align-item-center px-5" style="width: 18rem;">
+      <%= link_to movie do %>
+        <%= image_tag(movie.image, style: 'width:200px') %>
+      <% end %>
 
-                <div class="card-body">
-                  <p class="card-title lead"><%= movie.title %></p>
-                  <small><%= movie.director %><br></small>
-                  <small><%= movie.release_date %></small>
-                </div>
-              <div class="card-footer ">
-              </div>
-            </div>
-          <% end %>
+      <div class="card-body">
+        <p class="card-title lead"><%= movie.title %></p>
+        <small><%= movie.director %><br></small>
+        <small><%= movie.release_date %></small>
+      </div>
+      <div class="card-footer ">
+      </div>
     </div>
+  <% end %>
+</div>
