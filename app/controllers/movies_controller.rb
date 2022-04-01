@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
   def home
     @movies = Movie.all
   end
-  
+
   # GET /movies or /movies.json
   def index
     @movies = Movie.all
@@ -17,8 +17,16 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     @comments = Comment.all.where(movie:@movie)
     @actors = @movie.actors
-    @ratings = @movie.ratings
     @musics = @movie.musics
+    @ratings = @movie.ratings
+    @rating_total = 0
+    @total = 1
+    @ratings = @movie.ratings
+    @ratings.each do |rating|
+      @rating_total = @rating_total + rating.rate
+      @total = @total +1
+  end
+    @rating_average = @rating_total / @total
   end
 
   # GET /movies/new
@@ -37,21 +45,29 @@ class MoviesController < ApplicationController
 
   # POST /movies or /movies.json
   def create
+    @actors_name = ""
     @movie = current_user.movies.build(movie_params)
     hash = OmdbService.new()
-    #escaped_title = CGI.escape(@movie.title)
+    escaped_title = CGI.escape(@movie.title)
+    if hash.exist?(@movie.title) == "False"
+      flash[:alert] = "Movie not found."
+    else
+    @movie.image = hash.get_image_by_title(@movie.title)
     @movie.synopsis = hash.get_synopsis_by_title(@movie.title)
     @movie.director = hash.get_director_by_title(@movie.title)
+    @movie.release_date = hash.get_year_by_title(@movie.title)
     @actors_name = hash.get_actor_by_title(@movie.title)
-    #On découpe le string en plusieurs "entrés" d'une liste
     @actors_name_array = @actors_name.split(",")
-    #On récupère chacun des acteurs de la liste
     @actors_name_array.each do |value|
-        #On les sauvent un par un en BDD
-        @actor = Actor.create(full_name: value)
-        #On les ajoutes un par un au movie par une jointure
-        @movie_actor = MovieActor.create(movie: @movie, actor: @actor)
+    if Actor.exists?(:full_name => value) == false
+      @actor = Actor.create(full_name: value)
+      @movie_actor = MovieActor.create(movie: @movie, actor: @actor)
+    else
+      @actor = Actor.find_by(full_name: value)
+      @movie_actor = MovieActor.create(movie: @movie, actor: @actor)
     end
+    end
+  end
 
     respond_to do |format|
       if @movie.save
@@ -95,7 +111,7 @@ class MoviesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def movie_params
-      params.require(:movie).permit(:title, :synopsis, :director, :release_date, :movie_picture)
+      params.require(:movie).permit(:title, :synopsis, :director, :release_date, :image)
     end
 
     def comment_params

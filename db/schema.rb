@@ -118,7 +118,7 @@ ActiveRecord::Schema.define(version: 2022_03_30_221334) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.binary "image"
+    t.string "image"
   end
 
   create_table "musics", force: :cascade do |t|
