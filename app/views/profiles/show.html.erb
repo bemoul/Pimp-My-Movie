@@ -9,10 +9,10 @@
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title pb-5">Profil :</h5>
+            <h5 class="card-title pb-5">Profile :</h5>
             <p> Email : <%= current_user.email %> </p>
             <p> Username : <%= current_user.email %> </p>
-            <h5 class="card-title">The list of movies that you created</h5>
+            <h5 class="card-title">Movies that you created</h5>
             <% @movies.each do |movie| %>
               <p class="card-text-profile"><%= movie.title %></p>
             <% end %>
@@ -30,4 +30,4 @@
       </div>
     </div>
 
-  </div>
+</div>

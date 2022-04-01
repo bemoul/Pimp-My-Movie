@@ -25,7 +25,7 @@ class MoviesController < ApplicationController
     @ratings.each do |rating|
       @rating_total = @rating_total + rating.rate
       @total = @total +1
-  end
+    end
     @rating_average = @rating_total / @total
   end
 
@@ -54,14 +54,14 @@ class MoviesController < ApplicationController
     @actors_name = hash.get_actor_by_title(@movie.title)
     @actors_name_array = @actors_name.split(",")
     @actors_name_array.each do |value|
-    if Actor.exists?(:full_name => value) == false
-      @actor = Actor.create(full_name: value)
-      @movie_actor = MovieActor.create(movie: @movie, actor: @actor)
-    else
-      @actor = Actor.find_by(full_name: value)
-      @movie_actor = MovieActor.create(movie: @movie, actor: @actor)
+      if Actor.exists?(:full_name => value) == false
+        @actor = Actor.create(full_name: value)
+        @movie_actor = MovieActor.create(movie: @movie, actor: @actor)
+      else
+        @actor = Actor.find_by(full_name: value)
+        @movie_actor = MovieActor.create(movie: @movie, actor: @actor)
+      end
     end
-  end
 
     respond_to do |format|
       if @movie.save
