@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class OmdbService
   # BASE_URL = "http://www.omdbapi.com/?t="
   # API_PARTIAL_URL = "&apikey=#{ENV['OMDB_API_KEY']}"
@@ -35,5 +33,19 @@ class OmdbService
                                                         }&t=#{title}").to_s
     parsed_response = JSON.parse(response)
     parsed_response['Poster']
+  end
+
+  def get_year_by_title(title)
+    response = HTTP.get("http://www.omdbapi.com/?apikey=#{ENV["OMDB_API_KEY"]
+    }&t=#{title}").to_s
+    parsed_response = JSON.parse(response)
+    parsed_response["Year"]
+  end
+
+  def exist?(title)
+    response = HTTP.get("http://www.omdbapi.com/?apikey=#{ENV["OMDB_API_KEY"]
+    }&t=#{title}").to_s
+    parsed_response = JSON.parse(response)
+    parsed_response["Response"]
   end
 end
