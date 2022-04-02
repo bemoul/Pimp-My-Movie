@@ -19,16 +19,24 @@ Le site est en live ici 👉 [Pimp My Movie](https://pimpmymovie.herokuapp.com)
 ## 🛠️ Installation Steps
 
 1. Bundle install
-
 2. rails:db:migrate
-
 3. Run the app localy: rails s
+4. Open your favorite browser at localhost:3000/
 
-## 🛠️ API
+## 🛠️ API OMDB-API
 thx to our friend from OMDB-API we can get such a lot of informations on movies. please get the api key from this website and pur the key in your env files:
 OMDB_API_KEY="yourkey"
-
 https://www.omdbapi.com/
+
+## 🛠️ OTHER API 
+Dear developper to get the full functionnement of this application you will need to get API KEY from :
+  - sengrid
+  - AWS
+put the  in your .env 
+SENDGRID_LOGIN="apikey"
+SENDGRID_PWD="yourpassword"
+AWS_ACCESS_KEY_ID= 'you_acces_key'
+AWS_SECRET_ACCESS_KEY='your_secret_acces_key'
 
 🌟 You are all set!
 ## Crédit 🔗
