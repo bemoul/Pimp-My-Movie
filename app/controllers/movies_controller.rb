@@ -20,14 +20,11 @@ class MoviesController < ApplicationController
     @actors = @movie.actors
     @musics = @movie.musics
     @ratings = @movie.ratings
-    @rating_total = 0
-    @total = 1
-    @ratings = @movie.ratings
-    @ratings.each do |rating|
-      @rating_total += rating.rate
-      @total += 1
-    end
-    @rating_average = @rating_total / @total
+
+    @rating_total = @movie.ratings.size
+    @rating_average =  @movie.ratings.average(:rate)
+    @rating_average =  @rating_average.to_f.round(1)
+
   end
 
   # GET /movies/new
