@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class UserMailer < ApplicationMailer
   def welcome_email(user)
     @user = user
@@ -7,4 +5,5 @@ class UserMailer < ApplicationMailer
 
     mail(to: @user.email, subject: 'Bienvenue sur Pimp My Movie !')
   end
+
 end

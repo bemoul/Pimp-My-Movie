@@ -318,6 +318,12 @@ button {
     display: inline-flex;
 }
 
+.movie-title {
+  padding-bottom: 20px;
+  text-transform: capitalize;
+  font-family: Fira-code;
+}
+
 .col-4 {
     padding-top: 30px;
     margin-left: 30px;
@@ -381,13 +387,6 @@ button {
     margin-bottom: 20px;
 }
 
-.big-title {
-    letter-spacing: 1em;
-    color: whitesmoke;
-    font-family: Montserrat;
-    text-align: center;
-}
-
 .card-body-profile {
     text-align: center;
     margin-top: 60px;
@@ -403,6 +402,7 @@ button {
 }
 
 .card-title {
+    font-size: 15px;
     text-align: right;
     margin-right: 2% !important;
 }

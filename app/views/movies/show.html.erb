@@ -42,13 +42,13 @@
       </div>
 
       <div class="col-md-8">
-        <h4 class="card-title"><%= @movie.title %></h4>
+        <h5 class="card-title"><%= @movie.title %></h5>
         <div class="card-body">
           <p class="card-text"><h6>Director: <%= @movie.director %></h6>
           <p class="card-text">
           <h6>Year Of Release: <%= @movie.release_date %></p></h6>
           <p class="card-text">
-          <h3>Synopsis: <%= @movie.synopsis %></h3>
+          <h6>Synopsis:</h6> <p><%= @movie.synopsis %></p>
           <p class="edit-movie"> <%= link_to 'Back', movies_path %> ||
             <%= link_to 'Destroy', movie_path(@movie), method: :delete, data: { confirm: 'Are You sure?' } %>
 
@@ -94,7 +94,9 @@
 
               <% @comments.each do |comment| %>
                 <div class="list-comments py-3">
-                  <h5 class="px-2 py-1"><%= comment.description %></h5>
+                <h6><%= comment.user.email %> :</h6>
+                <h6><%= comment.created_at %> :</h6>
+                  <h5 class="px-2 py-1">Message : <%= comment.description %></h5>
                 </div>
               <% end %>
             </div>

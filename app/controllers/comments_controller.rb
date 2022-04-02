@@ -16,7 +16,8 @@ class CommentsController < ApplicationController
       movie_id: params[:movie_id]
     )
     if @comment.save
-      redirect_to movie_url(@movie), info: 'Your comment has been save!'
+      flash[:succes] = "Your comment is save!"
+      redirect_to movie_url(@movie)
     else
       redirect_to movie_url(@movie), danger: 'Your comment is not save!'
     end
