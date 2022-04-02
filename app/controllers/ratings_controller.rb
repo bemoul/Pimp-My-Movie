@@ -13,7 +13,7 @@ class RatingsController < ApplicationController
     @rating = Rating.new(
       rate: params[:rate],
       user_id: current_user.id,
-      movie_id: params[:movie_id]
+      movie_id: @movie.id
     )
     if @rating.save
       redirect_to movie_url(@movie), info: 'Your rate has been save!'
