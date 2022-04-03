@@ -9,7 +9,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
-# Movie.destroy_all
+ Movie.destroy_all
 # Actor.destroy_all
 # Category.destroy_all
 # Comment.destroy_all
@@ -45,24 +45,24 @@ require 'faker'
 @title= Faker::Movie.title
 puts @title
 hash = OmdbService.new
-        escaped_title = CGI.escape(@title)
-    if hash.exist?(@title) == "False"
+        @escaped_title = CGI.escape(@title)
+    if hash.exist?(@escaped_title) == "False"
          puts "movie already exist"
         
-    else
+    elsif hash.exist?(@escaped_title) == "True"
         
-        @movie = Movie.new(
+        @movie = Movie.create(
             title: @title,
-            image: hash.get_image_by_title(@title),
-            synopsis: hash.get_synopsis_by_title(@title),
-            director: hash.get_director_by_title(@title),
-            release_date: hash.get_year_by_title(@title),
+            image: hash.get_image_by_title(@escaped_title),
+            synopsis: hash.get_synopsis_by_title(@escaped_title),
+            director: hash.get_director_by_title(@escaped_title),
+            release_date: hash.get_year_by_title(@escaped_title),
             user_id: User.first.id
         )
-    end
+   
 
 
-        @actors_name = hash.get_actor_by_title(@title)
+        @actors_name = hash.get_actor_by_title(@escaped_title)
         puts @actors_name
          @actors_name_array = @actors_name.split(',')
         @actors_name_array.each do |value|
@@ -74,7 +74,9 @@ hash = OmdbService.new
             end
         @movie_actor = MovieActor.create(movie: @movie, actor: @actor)
         end
-
+    else 
+        puts "pb with the movie"
+    end
 end
 
 
