@@ -8,11 +8,6 @@
     <div class="row no-gutters">
       <div class="col-md-4">
         <%= image_tag(@movie.image) %>
-        <% flash.each do |name, msg| %>
-          <div class='alert alert-<%= name %>'>
-            <%= msg %>
-          </div>
-        <% end %>
 
 	   <%= form_tag(movie_ratings_path(@movie.id)) do %>
           <div class="form-group">
@@ -94,7 +89,8 @@
 
               <% @comments.each do |comment| %>
                 <div class="list-comments py-3">
-                  <h5 class="px-2 py-1"><%= comment.description %></h5>
+                  <h7 class="px-2 py-1">(<%= comment.created_at %>) => <%= comment.user.email %></h7></br>
+                  <h7 class="px-2 py-1"><%= comment.description %></h7>
                 </div>
               <% end %>
             </div>

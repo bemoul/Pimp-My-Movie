@@ -441,6 +441,10 @@ h6 {
     color: white;
 }
 
+h7 {
+  font-size: 10px;
+}
+
 .edit-movie {
     text-align: right;
     color: white;
