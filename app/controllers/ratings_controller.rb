@@ -15,10 +15,10 @@ class RatingsController < ApplicationController
       user_id: current_user.id,
       movie_id: @movie.id
     )
-    if @rating.save
+    begin @rating.save
       redirect_to movie_url(@movie), info: 'Your rate has been save!'
-    else
-      redirect_to movie_url(@movie), danger: 'Your rate is not save!'
+    rescue
+      redirect_to movie_url(@movie), danger: 'Your rate is not save!, you should only vote once !'
     end
   end
 end

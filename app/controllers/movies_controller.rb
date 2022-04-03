@@ -46,21 +46,26 @@ class MoviesController < ApplicationController
         @found = true
         @actors_name = ""
         @movie = current_user.movies.build(movie_params)
+      begin
         hash = OmdbService.new
-        escaped_title = CGI.escape(@movie.title)
-    if hash.exist?(@movie.title) == "False"
+      rescue
+        puts "something went wrong in the service"
+        render  "movies/home"
+      end
+        @escaped_title = CGI.escape(@movie.title)
+    if hash.exist?(@escaped_title) == "False"
           flash[:alert] = "Movie not found. please check the title is correclty writed"
           @found = false
      
         
-    else
+    elsif hash.exist?(@escaped_title) == "True"
           # binding.pry
-        @movie.image = hash.get_image_by_title(@movie.title)
-        @movie.synopsis = hash.get_synopsis_by_title(@movie.title)
-        @movie.director = hash.get_director_by_title(@movie.title)
-        @movie.release_date = hash.get_year_by_title(@movie.title)
+        @movie.image = hash.get_image_by_title(@escaped_title)
+        @movie.synopsis = hash.get_synopsis_by_title(@escaped_title)
+        @movie.director = hash.get_director_by_title(@escaped_title)
+        @movie.release_date = hash.get_year_by_title(@escaped_title)
         @movie.save
-        @actors_name = hash.get_actor_by_title(@movie.title)
+        @actors_name = hash.get_actor_by_title(@escaped_title)
         @actors_name_array = @actors_name.split(',')
         @actors_name_array.each do |value|
             @actor = if Actor.exists?(full_name: value) == false
@@ -72,7 +77,7 @@ class MoviesController < ApplicationController
             end
 
 
-      respond_to do |format|
+        respond_to do |format|
             
           if @movie.save
             format.html { redirect_to movie_url(@movie), notice: 'Movie was successfully created.' }
@@ -86,7 +91,16 @@ class MoviesController < ApplicationController
           end
     
     
-        end   
+        end  
+        
+      else    
+        flash[:alert] = "The api dind't response correctly on this movie "
+        # render  "movies/home", notice: 'Something went wrong with the  response of the api'  
+        # redirect_to movies_path, notice: 'Something went wrong with the  response of the api' 
+        respond_to do |format|
+          format.html { render  "movies/home", notice: 'Something went wrong with the  response of the api'}
+          format.json { render json: @movie.errors, status: :unprocessable_entity }
+        end
       end
 
 

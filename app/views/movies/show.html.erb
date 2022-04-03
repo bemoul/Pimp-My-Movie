@@ -67,7 +67,9 @@
         <div class="section-comments">
 
           <% flash.each do |name, msg| %>
+         
             <div class='alert alert-<%= name %>'>
+             <%= name %>
               <%= msg %>
             </div>
           <% end %>
