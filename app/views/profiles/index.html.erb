@@ -1,0 +1,29 @@
+<div class="container">
+
+  <div class="card-body-profile">
+    <div class="tab-content">
+      <div class="card mb-3">
+        <div class="row no-gutters">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title pb-5">Profile :</h5>
+              <p> Email : <%= current_user.email %> </p>
+              <h5 class="card-title">Movies that you created :</h5></br>
+              <% @movies.each do |movie| %>
+                <p class="card-text-profile"><%= movie.title %></p>
+              <% end %>
+              <div class="pt-5">
+
+
+                <%= link_to "Edit your profile", edit_user_registration_path %>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

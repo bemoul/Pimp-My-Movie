@@ -1,12 +1,18 @@
-
-
 <h1>New Movie</h1>
-<div class="container px-5 py-5">
 
+<div class="container">
 
-
-<%= render 'form', movie: @movie %>
-
+  <div class="warning_new_movie">
+    <p>
+      &#9888; Careful, you have to type exactly the title of the movie you want to add &#9888;</p>
+  </div>
 
 </div>
-<%= link_to 'Back', movies_path %>
+
+<div class="container px-5 py-5">
+
+  <%= render 'form', movie: @movie %>
+  <p>* fill mandatory </p>
+  <%= link_to 'Back', movies_path %>
+
+</div>

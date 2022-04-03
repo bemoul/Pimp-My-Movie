@@ -1,12 +1,11 @@
+# frozen_string_literal: true
 # require 'rails_helper'
 
 # RSpec.describe TonModel, type: :model do
 
-#   before(:each) do 
+#   before(:each) do
 #   # en général, tu as envie de créer une nouvelle instance
 #   end
-
-
 
 #   context "validations" do
 
